@@ -1,56 +1,46 @@
-name: Deploy to Beget (FTPS, no external actions)
+name: Deploy to Beget (minimal FTP)
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch: {}     # запуск кнопкой
+    branches: [ main ]    # деплой при пуше в main
+  workflow_dispatch: {}    # и по кнопке Run workflow
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1) Забираем код
+      # 1) Получаем файлы репозитория
       - uses: actions/checkout@v4
 
-      # 2) (Опционально) сборка фронтенда. Если статика без сборки — удалите шаги 2–4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-
-      # 3) Ставим lftp (клиент с зеркалированием)
+      # 2) Ставим lftp — простой клиент с зеркалированием
       - name: Install lftp
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
 
-      # 4) Деплой содержимого dist/ в public_html/ по FTPS
-      - name: Deploy via lftp (FTPS)
+      # 3) Заливаем содержимое репозитория на сервер по FTPS
+      #    Если твой index.html лежит не в корне, поменяй LOCAL_DIR
+      - name: Upload via FTPS (no build)
         env:
-          FTP_HOST: vladizm5.beget.tech
+          FTP_HOST: vladizm5.beget.tech 
           FTP_USER: vladizm5_testuser
           FTP_PASS: Wkf!B2sHROcj
-          LOCAL_DIR: dist/                 # если у вас build/, поменяйте
-          REMOTE_DIR: public_html/         # целевой каталог на Beget
+          LOCAL_DIR: .               # что заливать (здесь — весь репозиторий)
+          REMOTE_DIR: public_html/   # куда на Beget
         run: |
-          test -d "$LOCAL_DIR" || (echo "No $LOCAL_DIR folder. Build step missing?" && exit 1)
-
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
-            set ftp:ssl-force true;            # принудительно TLS
-            set ftp:ssl-protect-data true;     # шифровать данные
-            set net:max-retries 2;
+            set ftp:passive-mode true;
+            set ftp:ssl-allow true;          # разрешаем TLS
+            set ftp:ssl-force true;          # и принудительно используем его (FTPS)
+            set ftp:ssl-protect-data true;   # шифруем данные
             set cmd:fail-exit true;
 
-            # Создать целевую папку, если нет
+            # Создать папку назначения, если её нет
             mkdir -p $REMOTE_DIR;
 
-            # Зеркалим локальную папку на сервер (обновляет/добавляет/удаляет)
+            # Зеркалим локальные файлы на сервер (без удаления чужих файлов)
             mirror -R \
-              --delete \
-              --parallel=4 \
+              --parallel=2 \
               --exclude-glob .git* \
               --exclude-glob .github/** \
               --exclude-glob node_modules/** \
