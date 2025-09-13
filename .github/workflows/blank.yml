@@ -2,47 +2,39 @@ name: Deploy to Beget (minimal FTP)
 
 on:
   push:
-    branches: [ main ]    # деплой при пуше в main
-  workflow_dispatch: {}    # и по кнопке Run workflow
+    branches: [ main ]
+  workflow_dispatch: {}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1) Получаем файлы репозитория
       - uses: actions/checkout@v4
 
-      # 2) Ставим lftp — простой клиент с зеркалированием
       - name: Install lftp
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
 
-      # 3) Заливаем содержимое репозитория на сервер по FTPS
-      #    Если твой index.html лежит не в корне, поменяй LOCAL_DIR
       - name: Upload via FTPS (no build)
         env:
           FTP_HOST: vladizm5.beget.tech 
           FTP_USER: vladizm5_testuser
           FTP_PASS: Wkf!B2sHROcj
-          LOCAL_DIR: .    # что заливать (здесь — весь репозиторий)
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
             set ftp:passive-mode true;
-            set ftp:ssl-allow true;          # разрешаем TLS
-            set ftp:ssl-force true;          # и принудительно используем его (FTPS)
-            set ftp:ssl-protect-data true;   # шифруем данные
+            set ftp:ssl-allow true;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
             set cmd:fail-exit true;
 
-            # Создать папку назначения, если её нет
-            mkdir -p $REMOTE_DIR;
-
-            # Зеркалим локальные файлы на сервер (без удаления чужих файлов)
+            # Зеркалим локальные файлы на сервер
             mirror -R \
               --parallel=2 \
               --exclude-glob .git* \
               --exclude-glob .github/** \
               --exclude-glob node_modules/** \
-              \$LOCAL_DIR\ \$REMOTE_DIR\;
+              . /;
             bye
           "
