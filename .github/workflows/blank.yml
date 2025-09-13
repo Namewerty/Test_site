@@ -25,7 +25,8 @@ jobs:
           FTP_HOST: vladizm5.beget.tech 
           FTP_USER: vladizm5_testuser
           FTP_PASS: Wkf!B2sHROcj
-                        # что заливать (здесь — весь репозиторий)
+          LOCAL_DIR: .
+          REMOTE_DIR: /          # что заливать (здесь — весь репозиторий)
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
             set ftp:passive-mode true;
