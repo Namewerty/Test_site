@@ -26,7 +26,6 @@ jobs:
           FTP_USER: vladizm5_testuser
           FTP_PASS: Wkf!B2sHROcj
           LOCAL_DIR: .               # что заливать (здесь — весь репозиторий)
-          REMOTE_DIR: .   # куда на Beget
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
             set ftp:passive-mode true;
