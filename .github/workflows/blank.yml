@@ -25,8 +25,7 @@ jobs:
           FTP_HOST: vladizm5.beget.tech 
           FTP_USER: vladizm5_testuser
           FTP_PASS: Wkf!B2sHROcj
-          LOCAL_DIR: .
-          REMOTE_DIR: /          # что заливать (здесь — весь репозиторий)
+          LOCAL_DIR: .    # что заливать (здесь — весь репозиторий)
         run: |
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
             set ftp:passive-mode true;
@@ -44,6 +43,6 @@ jobs:
               --exclude-glob .git* \
               --exclude-glob .github/** \
               --exclude-glob node_modules/** \
-              \"$LOCAL_DIR\" \"$REMOTE_DIR\";
+              \$LOCAL_DIR\ \$REMOTE_DIR\;
             bye
           "
