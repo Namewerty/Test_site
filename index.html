@@ -1,416 +1,1117 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="x-dns-prefetch-control" content="on"/>
-<link rel="preconnect" href="//m-files.cdn1.cc/"/>
-<title>Юридические услуги для юридических и физических лиц</title>
-<meta name="viewport" content="width=device-width"/>
-<meta name="robots" content="index, follow"/>
-<meta property="og:title" content="Юристы для себя и бизнеса"/>
-<meta property="og:description" content="Оказываем юридически услуги для физических и юридических лиц. Суды. Долги. Имущество. Банкротство. Субсидиарка. Строительные споры. Наследство. Исполнительное производство. "/>
-<meta property="og:image" content="https://m-files.cdn1.cc/lpfile/1/b/8/1b81d39077cd7a94727ed49738324054.jpg"/>
-<meta property="og:site_name" content="ЗАЩИТНАЯ ГРАМОТА"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="zgt-pravo.ru"/>
-<meta property="og:locale" content="ru_RU"/>
-<link href="//zgt-pravo.ru/favicon.ico?6" type="image/x-icon" rel="shortcut icon"/>
-<link href="//m-files.cdn1.cc/web/build/pages/public.bundle.css?v=1756197758" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Юридические услуги для юридических и физических лиц — ЗАЩИТНАЯ ГРАМОТА</title>
+  <meta name="description" content="Оказываем юридически услуги для физических и юридических лиц. Суды. Долги. Имущество. Банкротство. Субсидиарка. Строительные споры. Наследство. Исполнительное производство.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Точные цвета с целевой страницы */
+      --primary: #003DC2; /* Основной синий */
+      --primary-hover: #002A8F; /* Темнее для ховера */
+      --primary-light: #EAF1FF; /* Светло-голубой фон */
+      --primary-2: #F01F1F; /* Красный акцент */
+      --text: #1F2024; /* Основной текст */
+      --text-muted: #6B7280; /* Приглушенный текст */
+      --bg: #FFFFFF; /* Белый фон */
+      --card-bg: #F8FAFC; /* Фон карточек */
+      --border: #E5E7EB; /* Границы */
+      --badge-bg: #EEF2FF; /* Фон бейджей */
+      --gradient-hero: linear-gradient(180deg, #EAF1FF 0%, rgba(234, 241, 255, 0) 100%);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
 
-<style>
-body,#site_wrapper1{min-width:1366px;}
-.blk_section_inner{width:1366px;}
-@media (max-width: 500px){
-    body,#site_wrapper1{min-width:370px;}
-    .blk_section_inner{width:370px;}
-    .section_popup_wnd{width:300px!important;}
-    .blk-section--ms-popup{max-width:300px}
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Font faces */
-@font-face {
-    font-family: 'Open Sans';
-    src: url('//m-files.cdn1.cc/web/user/fonts/open_sans/open_sans_light.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/open_sans/open_sans_light.ttf') format('ttf');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
+    html, body {
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+    }
 
-@font-face {
-    font-family: 'Open Sans';
-    src: url('//m-files.cdn1.cc/web/user/fonts/open_sans/open_sans_normal.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/open_sans/open_sans_normal.ttf') format('ttf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+    .container {
+      max-width: 1366px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('//m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.ttf') format('ttf');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+    /* Кнопки */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('//m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_medium.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_medium.ttf') format('ttf');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
 
-@font-face {
-    font-family: 'Manrope';
-    src: url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_semi_bold.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_semi_bold.ttf') format('ttf');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
 
-@font-face {
-    font-family: 'Manrope';
-    src: url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_medium.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_medium.ttf') format('ttf');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+    .btn.primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
 
-@font-face {
-    font-family: 'Manrope';
-    src: url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_normal.woff') format('woff'), url('//m-files.cdn1.cc/web/user/fonts/manrope/manrope_normal.ttf') format('ttf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+    .btn.secondary {
+      background: white;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
 
-/* Basic styles */
-.menu-bar__button {background-color: #7d7d7d;float: right;} 
-.menu-bar__button .menu-bar__icon {fill: #FFFFFF;}
+    .btn.secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
 
-/* Font classes */
-.font-84{font-family:Montserrat,Arial!important;font-weight:700!important;font-style:normal!important;}
-.font-299{font-family:Manrope,Arial!important;font-weight:600!important;font-style:normal!important;}
-.font-298{font-family:Manrope,Arial!important;font-weight:500!important;font-style:normal!important;}
-.font-297{font-family:Manrope,Arial!important;font-weight:400!important;font-style:normal!important;}
-.font-82{font-family:Montserrat,Arial!important;font-weight:500!important;font-style:normal!important;}
+    .btn.ghost {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
 
-/* Button styles */
-.blk_form .blk_form_wrap.is_popover .btn-new,.user_form_submit .btn-new,.blk_button_data_wrap .btn-new {
-    font-family:Open Sans,Arial;
-    font-weight:300;
-    font-style:normal;
-    font-size:20px;
-    background:#2084d6;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    border:none;
-    color:#FFFFFF;
-    padding:10px 20px;
-}
+    .btn.ghost:hover {
+      background: var(--card-bg);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
 
-/* Quiz statistic */
-.quizStatisticIsEnabled { display: block; }
-</style>
+    /* Верхняя полоса */
+    .topbar {
+      background: var(--primary);
+      color: white;
+      font-size: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-<script type="text/javascript">window.quizStatisticIsEnabled = true;</script>
-<meta name="yandex-verification" content="507befc57637e3b3" />
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+
+    .topbar .phone {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .topbar .time {
+      color: rgba(255, 255, 255, 0.8);
+      margin-left: 8px;
+    }
+
+    .topbar .actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .topbar .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+
+    .topbar .btn.secondary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .topbar .btn.ghost {
+      background: transparent;
+      color: white;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .topbar .btn.ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    /* Навигация */
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 8px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Герой-блок */
+    .hero {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23e2e8f0" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>') repeat;
+      opacity: 0.5;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons .btn {
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* Свяжитесь с нами */
+    .contact-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .contact-card .btn {
+      width: 100%;
+    }
+
+    /* Какой формат вам нужен? */
+    .format-section {
+      padding: 80px 0;
+      background: var(--card-bg);
+    }
+
+    .format-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .format-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 280px;
+    }
+
+    .format-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .format-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .format-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .format-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .format-card .btn {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Частые ситуации */
+    .situations-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .situations-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    .situations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .situation-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .situation-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .situation-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .situation-card p {
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .situation-card .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Цены (Абонементы) */
+    .pricing-section {
+      padding: 80px 0;
+      background: var(--card-bg);
+    }
+
+    .pricing-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .pricing-subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    .pricing-header {
+      margin-bottom: 24px;
+    }
+
+    .pricing-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .price .amount {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .price .period {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 0 0 32px 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      color: var(--text);
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+    }
+
+    /* Контакты */
+    .contact-info-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info-main h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .contact-details {
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .contact-item a {
+      display: block;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info-links h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .quick-links {
+      list-style: none;
+      margin: 0 0 24px 0;
+      padding: 0;
+    }
+
+    .quick-links li {
+      margin-bottom: 8px;
+    }
+
+    .quick-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .quick-links a:hover {
+      color: var(--primary);
+    }
+
+    .messengers {
+      display: flex;
+      gap: 12px;
+    }
+
+    .messenger-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .messenger-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .messenger-btn.telegram {
+      background: #0088cc;
+      color: white;
+    }
+
+    /* Футер */
+    .footer {
+      background: var(--text);
+      color: white;
+      padding: 48px 0 24px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 32px;
+    }
+
+    .footer-logo p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 12px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer-column h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 1024px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .format-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .situations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .contact-section h2,
+      .format-section h2,
+      .situations-section h2,
+      .pricing-section h2 {
+        font-size: 28px;
+      }
+
+      .pricing-subtitle {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
-<body class=" margin-v2">
-
-<div id="site_wrapper1">
-<div id="sections_list">
-
-<!-- Header Section -->
-<div blk_class="section" class="blk_section block-content bg_type_color is_absolute" data-par-speed="" id="003a0f651ae9407da40bf4f178eeac63" data-id="s-003a0f651ae9407da40bf4f178eeac63" bg_type="color">
-    <div class="section_image_container">
-        <div id="section_image_003a0f651ae9407da40bf4f178eeac63" class="section-image" style="background-position: 50% 0%; background-repeat: no-repeat; filter: none;"></div>
+<body>
+  <!-- Верхняя полоса -->
+  <div class="topbar">
+    <div class="container">
+      <div class="contact-info">
+        <span class="phone">+7 (967) 555-81-82</span>
+        <span class="time">Пн-Пт 9:00-19:00</span>
+      </div>
+      <div class="actions">
+        <a href="#" class="btn secondary">Позвонить</a>
+        <a href="#" class="btn ghost">Заказать звонок</a>
+      </div>
     </div>
-    <div id="section_image_svg_003a0f651ae9407da40bf4f178eeac63" class="svg_wrap section-image__svg" style="display: none;">
-        <div class="svg_container"></div>
-    </div> 
-    <div class="mha clearfix blk_section_inner"> 
-        <div class="section-cell tpl_cell tpl_section_cell sortable_cell l_float " id="769729f8e0594557b15945b9d0a753f8" > 
-            <div class="blk blk_ms blk-in-abs skip-adapt" id="3286c03199f845888e4804286aae01b5" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-3286c03199f845888e4804286aae01b5" data-tpl-id="1998" > 
-                <div class="block-content" >
-                    <div class="m-block-wrapper" data-size="width"> 
-                        <div class="m-columns "> 
-                            <div class="m-columns__column m-columns__column--0 m-columns__column--3286c03199f845888e4804286aae01b5" id="m-columns__column--0"> 
-                                <div id="7c8ec7fc22e649d2967f384713ba2bb3" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_ms skip-adapt" id="8d8164daed934c01b51951cf20134cf8" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-8d8164daed934c01b51951cf20134cf8" data-tpl-id="1738"> 
-                                            <div class="block-content">
-                                                <div class="m-image__wrapper need-alignment" onclick="return msJsWrapper(event,'8d8164daed934c01b51951cf20134cf8','linkRedirect');"> 
-                                                    <div class="m-image__sub-wrapper" onmouseenter="return msJsWrapper(event,'8d8164daed934c01b51951cf20134cf8','showImgNotice');" onmouseleave="return msJsWrapper(event,'8d8164daed934c01b51951cf20134cf8','hideImgNotice');"> 
-                                                        <div class="m-image m-image--pc" data-page-link="https://zgt-pravo.ru"> 
-                                                            <img src="//m-files.cdnvideo.ru/lpfile/9/7/0/970c64c0719f0c77bb4e76abb76f15fc.svg?77713053" title="" alt="" loading="lazy"> 
-                                                        </div> 
-                                                    </div> 
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div class="m-columns__column m-columns__column--1 m-columns__column--3286c03199f845888e4804286aae01b5" id="m-columns__column--1"> 
-                                <div id="82ec6689a09f4b0da2f94b4878da363e" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table"></div>
-                                </div> 
-                            </div> 
-                            <div class="m-columns__column m-columns__column--2 m-columns__column--3286c03199f845888e4804286aae01b5" id="m-columns__column--2"> 
-                                <div id="551e9c74c38f43369d9ced392e7c6f7e" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="7e09c3f56e3c4f4f918f4db2a2a47a95" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-7e09c3f56e3c4f4f918f4db2a2a47a95"> 
-                                            <div class="blk-data clearfix font-82">
-                                                <span style="color: rgba(240,245,255,1);">
-                                                    <a href="tel:89675558182" target="_self" data-type="link" style="color: rgba(240,245,255,1);">+7 (967) 555-81-82</a>
-                                                </span>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div class="m-columns__column m-columns__column--3 m-columns__column--3286c03199f845888e4804286aae01b5" id="m-columns__column--3"> 
-                                <div id="22e2a9ab8fe94d20a5e915239bc161f8" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_ms skip-adapt" id="8adf6b0f85c34869a4acfee658c17eed" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-8adf6b0f85c34869a4acfee658c17eed" data-tpl-id="2920"> 
-                                            <div class="block-content">
-                                                <div class="m-block-wrapper need-alignment" data-size="width"> 
-                                                    <div class="m-button-wrapper " act="linkRedirect" onclick="return msJsWrapper(event,'8adf6b0f85c34869a4acfee658c17eed','linkRedirect');" data-page-link="tel:89675558182"> 
-                                                        <div class="m-button m-button-kZ3XeHM ms-ts-8adf6b0f85c34869a4acfee658c17eed-41"> 
-                                                            <div class="m-button__text m-button__text-kZ3XeHM"> 
-                                                                <span class="ms-active-string">Позвонить<br></span> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div class="m-columns__column m-columns__column--4 m-columns__column--3286c03199f845888e4804286aae01b5" id="m-columns__column--4"> 
-                                <div id="5e4b63fd9def47a38026f2c70ec4f8e3" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_ms skip-adapt" id="cb72bcd51ba14e569dd8ce920ced9d4c" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-cb72bcd51ba14e569dd8ce920ced9d4c" data-tpl-id="2920"> 
-                                            <div class="block-content">
-                                                <div class="m-block-wrapper need-alignment" data-size="width"> 
-                                                    <div class="m-button-wrapper " act="showPopup" onclick="return msJsWrapper(event,'cb72bcd51ba14e569dd8ce920ced9d4c','showPopup');" data-page-link="https://b24-g5015x.bitrix24site.ru/crm_form_zgtpravo/" data-popup-id="eb501b2833e24a75b5bbd65965fc8c52"> 
-                                                        <div class="m-button m-button-HZ8KN_y gs-fonts--8"> 
-                                                            <div class="m-button__text m-button__text-HZ8KN_y"> 
-                                                                <span class="ms-active-string">Заказать звонок<br></span> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                </div>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                </div> 
-            </div> 
-        </div> 
-    </div>
-</div>
+  </div>
 
-<!-- Navigation Menu -->
-<div blk_class="section" class="blk_section block-content   blk-section--ms" data-tpl-id="2330" id="4b149e8842bc4ebc9c112886441faebf" data-id="s-4b149e8842bc4ebc9c112886441faebf" pos="2">
-    <div class="ms-menu__wrapper">
-        <div class="ms-menu">
-            <div class="ms-menu__button-wrapper" onclick="return msJsWrapper(event,'4b149e8842bc4ebc9c112886441faebf','showMobileMenu()');">
-                <div class="ms-menu__button"></div>
-            </div>
-            <div class="ms-menu__items-wrapper">
-                <div class="ms-menu__items ms-ts-4b149e8842bc4ebc9c112886441faebf-87">
-                    <a href="https://zgt-pravo.ru" title="Защитная грамота" onclick="return msJsWrapper(event,'4b149e8842bc4ebc9c112886441faebf','hideMobileMenu()');">
-                        <div class="ms-menu__item ms-menu__item-0">
-                            <span class="ms-active-string">ГЛАВНАЯ</span>
-                        </div>
-                    </a>
-                    <div class="ms-menu__item ms-menu__item-1" onclick="return msJsWrapper(event,'4b149e8842bc4ebc9c112886441faebf','showMenu()');">
-                        <div class="ms-menu__slot ms-menu__slot-1">
-                            <div id="d9672383a12945ac9cca3dabde9315ad" class="ms-slot ms-slot--param-slot">
-                                <div class="ms-slot__cell ms-slot__cell--table">
-                                    <div class="blk blk_ms skip-adapt" id="d892ea708bce4b4493280364047f7ece" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-d892ea708bce4b4493280364047f7ece" data-tpl-id="2920"> 
-                                        <div class="block-content">
-                                            <div class="m-block-wrapper need-alignment" data-size="width"> 
-                                                <div class="m-button-wrapper " act="reachGoals" onclick="return msJsWrapper(event,'d892ea708bce4b4493280364047f7ece','reachGoals');" data-page-link=""> 
-                                                    <div class="m-button m-button-XljdUe5 ms-ts-d892ea708bce4b4493280364047f7ece-107"> 
-                                                        <div class="m-button__text m-button__text-XljdUe5"> 
-                                                            <span class="ms-active-string">УСЛУГИ</span> 
-                                                        </div> 
-                                                    </div> 
-                                                </div> 
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ms-menu__item-arrow"></div>
-                        <div class="ms-menu__item-substrate">
-                            <div class="ms-column__item ms-column__item-0">
-                                <!-- Submenu items would go here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Навигация -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">ZGT</div>
+        <span class="logo-text">Право</span>
+      </a>
+      <nav>
+        <ul class="nav">
+          <li><a href="#">Услуги</a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Наш опыт</a></li>
+          <li><a href="#">База знаний</a></li>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main>
+    <!-- Герой-блок -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Юристы для себя и бизнеса</h1>
+          <p>Профессиональная юридическая помощь для физических и юридических лиц. Решаем сложные вопросы быстро и эффективно.</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn primary">Для физических лиц</a>
+            <a href="#" class="btn primary">Для юридических лиц</a>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- Hero Section -->
-<div blk_class="section" class="blk_section block-content bg_type_color is_absolute" data-par-speed="" id="cc217fdab5b74b74a1943b040e70686b" data-id="s-cc217fdab5b74b74a1943b040e70686b" bg_type="color">
-    <div class="section_image_container">
-        <div id="section_image_cc217fdab5b74b74a1943b040e70686b" class="section-image" style="background-position: 50% 0%; background-repeat: no-repeat; filter: none;"></div>
-    </div>
-    <div id="section_image_svg_cc217fdab5b74b74a1943b040e70686b" class="svg_wrap section-image__svg" style="display: none;">
-        <div class="svg_container"></div>
-    </div> 
-    <div class="mha clearfix blk_section_inner"> 
-        <div class="section-cell tpl_cell tpl_section_cell sortable_cell l_float " id="bbf5948778c74b69b9706fb32a196845" > 
-            <div class="blk blk_ms blk-in-abs skip-adapt" id="bbf5948778c74b69b9706fb32a196845" blk_class="blk_ms" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-bbf5948778c74b69b9706fb32a196845" data-tpl-id="1998" > 
-                <div class="block-content" >
-                    <div class="m-block-wrapper" data-size="width"> 
-                        <div class="m-columns "> 
-                            <div class="m-columns__column m-columns__column--0 m-columns__column--bbf5948778c74b69b9706fb32a196845" id="m-columns__column--0"> 
-                                <div id="d9b5f8bf7fb54bb3b5687a8497cf069e" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="d9b5f8bf7fb54bb3b5687a8497cf069e" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-d9b5f8bf7fb54bb3b5687a8497cf069e"> 
-                                            <div class="blk-data clearfix font-84" style="font-size:40px;line-height:48px;padding:0px 0px 0px 0px">
-                                                <span style="color: rgba(0,61,194,1);">Юристы для себя и бизнеса</span>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <div class="m-columns__column m-columns__column--1 m-columns__column--bbf5948778c74b69b9706fb32a196845" id="m-columns__column--1"> 
-                                <div id="4066167d2699465cac2479498136bc7e" class="ms-slot ms-slot--param-slot">
-                                    <div class="ms-slot__cell ms-slot__cell--table">
-                                        <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="4066167d2699465cac2479498136bc7e" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-4066167d2699465cac2479498136bc7e"> 
-                                            <div class="blk-data clearfix font-297" style="font-size:20px;line-height:140%;text-align:justify;padding:0px 15px 10px 0px">
-                                                <span style="color: rgba(0,0,0,1);">Оказываем юридически услуги для физических и юридических лиц. Суды. Долги. Имущество. Банкротство. Субсидиарка. Строительные споры. Наследство. Исполнительное производство.</span>
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                </div> 
-            </div> 
-        </div> 
-    </div>
-</div>
-
-<!-- Services Section -->
-<div blk_class="section" class="blk_section block-content bg_type_color is_absolute" data-par-speed="" id="ca9ac46947c140a68b6ff6cd246a9a2d" data-id="s-ca9ac46947c140a68b6ff6cd246a9a2d" bg_type="color">
-    <div class="section_image_container">
-        <div id="section_image_ca9ac46947c140a68b6ff6cd246a9a2d" class="section-image" style="background-position: 50% 0%; background-repeat: no-repeat; filter: none;"></div>
-    </div>
-    <div id="section_image_svg_ca9ac46947c140a68b6ff6cd246a9a2d" class="svg_wrap section-image__svg" style="display: none;">
-        <div class="svg_container"></div>
-    </div> 
-    <div class="mha clearfix blk_section_inner"> 
-        <div class="section-cell tpl_cell tpl_section_cell sortable_cell l_float " id="9d9d2c0924c249b6a555eca3c551fe42" > 
-            <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="9d9d2c0924c249b6a555eca3c551fe42" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-9d9d2c0924c249b6a555eca3c551fe42"> 
-                <div class="blk-data clearfix font-84" style="font-size:40px;line-height:115%;padding:0px 0px 0px 0px">
-                    <span style="color: rgba(0,61,194,1);">Наши услуги</span>
-                </div> 
-            </div> 
-        </div> 
-        
-        <!-- Service items would be added here -->
-        
-    </div>
-</div>
-
-<!-- Contact Section -->
-<div blk_class="section" class="blk_section block-content bg_type_color is_absolute" data-par-speed="" id="76e55b1e61974b5f9c87ecc85642e7a7" data-id="s-76e55b1e61974b5f9c87ecc85642e7a7" bg_type="color" style="background: rgba(0,61,194,1);">
-    <div class="section_image_container">
-        <div id="section_image_76e55b1e61974b5f9c87ecc85642e7a7" class="section-image" style="background-position: 50% 0%; background-repeat: no-repeat; filter: none;"></div>
-    </div>
-    <div id="section_image_svg_76e55b1e61974b5f9c87ecc85642e7a7" class="svg_wrap section-image__svg" style="display: none;">
-        <div class="svg_container"></div>
-    </div> 
-    <div class="mha clearfix blk_section_inner"> 
-        <div class="section-cell tpl_cell tpl_section_cell sortable_cell l_float " id="a7d6bf2916014877958c066c63814308" > 
-            <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="a7d6bf2916014877958c066c63814308" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-a7d6bf2916014877958c066c63814308"> 
-                <div class="blk-data clearfix font-84" style="font-size:40px;line-height:140%;padding:0px 0px 0px 0px">
-                    <span style="color: rgba(255,255,255,1);">Контакты</span>
-                </div> 
-            </div> 
-        </div> 
-        
-        <div class="section-cell tpl_cell tpl_section_cell sortable_cell l_float " id="552f4a40cd37430c8e543ead5811496b" > 
-            <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="552f4a40cd37430c8e543ead5811496b" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-552f4a40cd37430c8e543ead5811496b"> 
-                <div class="blk-data clearfix font-297" style="font-size:18px;line-height:140%;padding:0px 0px 0px 0px">
-                    <span style="color: rgba(255,255,255,1);">Телефон: +7 (967) 555-81-82<br>Email: info@zgt-pravo.ru</span>
-                </div> 
-            </div> 
-        </div> 
-    </div>
-</div>
-
-</div>
-</div>
-
-<!-- Popup Section -->
-<div blk_class="section" class="blk_section section_popup block-content bg_type_color is_absolute" data-par-speed="" id="af506725d22b4d1d9490b969f79c8205" data-id="s-af506725d22b4d1d9490b969f79c8205" bg_type="color" style="display: none;">
-    <div class="section_popup_wnd" style="height:348px;width:824px;background: rgba(240,245,255,1);border:none;border-radius:6px;box-shadow:4px 4px 12px 1px rgb(0 0 0 / 35%);transform: none;">
-        <div class="section_popup_wnd_header">
-            <div class="close-button" style="top: -35px;left: unset;right: -35px;background: transparent;width: 30px;height: 30px;">
-                <svg fill="#dddddd" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                </svg>
-            </div>
+    <!-- Свяжитесь с нами -->
+    <section class="contact-section">
+      <div class="container">
+        <h2>Свяжитесь с нами, это бесплатно</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>По телефону</h3>
+            <p>Быстрая консультация по телефону в рабочее время</p>
+            <a href="#" class="btn primary">Заказать звонок</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>В чате</h3>
+            <p>Онлайн-консультация через мессенджеры</p>
+            <a href="#" class="btn primary">Задать вопрос</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>По почте</h3>
+            <p>Детальная консультация по электронной почте</p>
+            <a href="#" class="btn primary">Написать письмо</a>
+          </div>
         </div>
-        <div class="section_popup_wnd_content">
-            <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="cb5e4a2dd98f498e897d6aedb06b64fe" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-cb5e4a2dd98f498e897d6aedb06b64fe"> 
-                <div class="blk-data clearfix font-84" style="font-size:25px;line-height:140%;padding:0px 0px 0px 0px">
-                    <span style="color: rgba(0,0,0,1);">Заказать звонок</span>
-                </div> 
-            </div>
-            
-            <div class="blk blk_text blk-no-bg-lpm-449 blk_text__mtr-85 skip-adapt" id="0276e211f2b14683b479611ebb2d8006" blk_class="blk_text" data-animation-class="" data-animation-duration="" data-animation-delay="" data-id="b-0276e211f2b14683b479611ebb2d8006"> 
-                <div class="blk-data clearfix font-297" style="font-size:18px;line-height:140%;padding:0px 0px 0px 0px">
-                    <span style="color: rgba(0,0,0,1);">Оставьте заявку и мы свяжемся с вами в ближайшее время</span>
-                </div> 
-            </div>
-            
-            <!-- Form would be embedded here -->
-            <script>
-                (function(w,d,u){
-                    var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-                    var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-                })(window,document,'https://b24-g5015x.bitrix24site.ru/upload/crm/site/form/loader_eb501b2833e24a75b5bbd65965fc8c52.js');
-            </script>
-        </div>
-    </div>
-</div>
+      </div>
+    </section>
 
-<script type="text/javascript">
-if (window.gtag) {
-    gtag('get', '', 'client_id', function(clientId) {
-        window.ga_cid = clientId;
-        console.log('got client id: ', window.ga_cid);
-        $('.frm_field1').val(window.ga_cid);
+    <!-- Какой формат вам нужен? -->
+    <section class="format-section">
+      <div class="container">
+        <h2>Какой формат вам нужен?</h2>
+        <div class="format-grid">
+          <div class="format-card">
+            <div class="format-icon">🎯</div>
+            <h3>Определить<br>способ</h3>
+            <p>Поможем выбрать оптимальный способ решения вашей правовой задачи</p>
+            <a href="#" class="btn ghost">УЗНАТЬ ПОДРОБНЕЕ</a>
+          </div>
+          <div class="format-card">
+            <div class="format-icon">🔥</div>
+            <h3>Горящая<br>проблема</h3>
+            <p>Срочная консультация и помощь в решении неотложных вопросов</p>
+            <a href="#" class="btn ghost">ПОЛУЧИТЬ ПОМОЩЬ</a>
+          </div>
+          <div class="format-card">
+            <div class="format-icon">💡</div>
+            <h3>Принять<br>решение</h3>
+            <p>Комплексный анализ ситуации и рекомендации по дальнейшим действиям</p>
+            <a href="#" class="btn ghost">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Частые ситуации -->
+    <section class="situations-section">
+      <div class="container">
+        <h2>Частые ситуации</h2>
+        <div class="situations-grid">
+          <div class="situation-card">
+            <h4>Строители не сдают вовремя объект</h4>
+            <p>Поможем взыскать неустойку и защитить ваши права как дольщика</p>
+            <a href="#" class="btn ghost">Получить консультацию</a>
+          </div>
+          <div class="situation-card">
+            <h4>Мешает шум от соседей</h4>
+            <p>Юридическая помощь в решении конфликтов с соседями по шуму</p>
+            <a href="#" class="btn ghost">Получить консультацию</a>
+          </div>
+          <div class="situation-card">
+            <h4>Обманули мошенники</h4>
+            <p>Поможем вернуть деньги и привлечь мошенников к ответственности</p>
+            <a href="#" class="btn ghost">Получить консультацию</a>
+          </div>
+          <div class="situation-card">
+            <h4>Тревожная ситуация у ребёнка в школе</h4>
+            <p>Защита прав ребёнка и родителей в образовательных учреждениях</p>
+            <a href="#" class="btn ghost">Получить консультацию</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Цены (Абонементы) -->
+    <section class="pricing-section">
+      <div class="container">
+        <h2>Нужны регулярные юридические консультации?</h2>
+        <p class="pricing-subtitle">Подпишитесь на наш годовой абонемент, и будьте уверены — ваш юрист всегда на связи, готов помочь в любое время и в любой ситуации</p>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Абонемент для физических лиц</h3>
+              <div class="price">
+                <span class="amount">15 000₽</span>
+                <span class="period">/год</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li>Неограниченные консультации</li>
+              <li>Подготовка документов</li>
+              <li>Представительство в суде</li>
+              <li>Сопровождение сделок</li>
+            </ul>
+            <a href="#" class="btn primary">Выбрать тариф</a>
+          </div>
+          <div class="pricing-card featured">
+            <div class="pricing-header">
+              <h3>Абонемент для юридических лиц</h3>
+              <div class="price">
+                <span class="amount">120 000₽</span>
+                <span class="period">/год</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li>Полное юридическое сопровождение</li>
+              <li>Корпоративное право</li>
+              <li>Договорная работа</li>
+              <li>Спорные вопросы</li>
+            </ul>
+            <a href="#" class="btn primary">Выбрать тариф</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="contact-info-grid">
+          <div class="contact-info-main">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-details">
+              <div class="contact-item">
+                <strong>Телефон:</strong>
+                <a href="tel:+79675558182">+7 967 555-81-82</a>
+                <a href="tel:+74993017761">+7 499 301-77-61</a>
+              </div>
+              <div class="contact-item">
+                <strong>Email:</strong>
+                <a href="mailto:zgt-mail@yandex.ru">zgt-mail@yandex.ru</a>
+              </div>
+              <div class="contact-item">
+                <strong>Время работы:</strong>
+                <span>Пн-Пт 9:00-19:00</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a href="#" class="btn primary">Заказать звонок</a>
+              <a href="#" class="btn secondary">Позвонить</a>
+              <a href="#" class="btn ghost">Написать письмо</a>
+            </div>
+          </div>
+          <div class="contact-info-links">
+            <h3>Быстрые ссылки</h3>
+            <ul class="quick-links">
+              <li><a href="#">Портфолио</a></li>
+              <li><a href="#">Цены</a></li>
+              <li><a href="#">База знаний</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <div class="messengers">
+              <a href="#" class="messenger-btn whatsapp">WhatsApp</a>
+              <a href="#" class="messenger-btn telegram">Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo">
+            <div class="logo-icon">ZGT</div>
+            <span class="logo-text">Право</span>
+          </div>
+          <p>Профессиональные юридические услуги</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Услуги</h4>
+            <ul>
+              <li><a href="#">Для физических лиц</a></li>
+              <li><a href="#">Для юридических лиц</a></li>
+              <li><a href="#">Консультации</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Компания</h4>
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Наш опыт</a></li>
+              <li><a href="#">База знаний</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="tel:+79675558182">+7 967 555-81-82</a></li>
+              <li><a href="mailto:zgt-mail@yandex.ru">zgt-mail@yandex.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ZGT Право. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Перехват всех кликов по ссылкам и кнопкам
+    document.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        e.preventDefault();
+        const action = e.target.textContent.trim();
+        
+        // Показываем уведомление о клике
+        console.log('Клик по:', action);
+        
+        // Можно добавить модальное окно или другую логику
+        if (action.includes('Заказать звонок') || action.includes('Позвонить')) {
+          alert('Функция звонка будет реализована в полной версии сайта');
+        } else if (action.includes('консультацию') || action.includes('помощь')) {
+          alert('Форма заявки будет реализована в полной версии сайта');
+        } else {
+          alert('Переход на страницу "' + action + '" будет реализован в полной версии сайта');
+        }
+      }
     });
-} else if (window.ga){
-    ga(function(t){
-        window.ga_cid = t.get('clientId');
-        console.log('got client id: ', window.ga_cid);
-        $('.frm_field1').val(window.ga_cid);
-    });
-}
-</script>
 
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
