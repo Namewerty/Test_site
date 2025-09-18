@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Юридические услуги | ZGT Право</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЗГТ Право - Юридические услуги для физических и юридических лиц</title>
+  <meta name="description" content="Профессиональные юридические услуги для физических и юридических лиц. Консультации, представительство в суде, сопровождение сделок.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
+      /* Design tokens from JSON */
       --white: #FFFFFF;
       --black: #0D1D31;
       --text-primary: #0D1D31;
@@ -24,79 +29,74 @@
       --accent-orange: #FFB629;
       --border: #E0E4EE;
       --panel: #F9F9FA;
-
-      --radius-card: 20px;
-      --radius-button: 14px;
-      --radius-pill: 9999px;
-      --radius-image: 18px;
-      --radius-input: 12px;
-
+      
+      /* Typography */
+      --font-family-head: 'Montserrat', 'Manrope', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Arial';
+      --font-family-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Arial';
+      
+      /* Shadows */
       --shadow-card: 0 8px 24px rgba(2, 8, 23, 0.10);
       --shadow-card-hover: 0 12px 28px rgba(2, 8, 23, 0.14);
       --shadow-floating: 0 10px 32px rgba(2, 8, 23, 0.18);
       --shadow-button-primary: 0 10px 20px rgba(240, 31, 31, 0.35);
       --shadow-pill: 0 4px 10px rgba(10, 60, 187, 0.12);
       --shadow-focus-ring: 0 0 0 3px rgba(27, 85, 194, 0.20);
+      
+      /* Radii */
+      --radius-card: 20px;
+      --radius-button: 14px;
+      --radius-pill: 9999px;
+      --radius-image: 18px;
+      --radius-input: 12px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: var(--font-family-body);
       font-size: 16px;
       line-height: 1.6;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       background: var(--white);
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Montserrat", "Manrope", system-ui, sans-serif;
-      margin-top: 0;
-      color: var(--text-primary);
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
+    /* Typography */
     h1 {
+      font-family: var(--font-family-head);
       font-size: 48px;
       line-height: 1.16;
       font-weight: 800;
     }
 
     h2 {
+      font-family: var(--font-family-head);
       font-size: 34px;
       line-height: 1.2;
       font-weight: 800;
     }
 
     h3 {
+      font-family: var(--font-family-head);
       font-size: 20px;
       line-height: 1.3;
       font-weight: 700;
     }
 
-    p {
-      margin-top: 0;
-    }
-
-    a {
-      color: var(--primary-blue-600);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--primary-blue-700);
-      text-decoration: underline;
-    }
-
-    .container {
-      width: min(1200px, 100%);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -104,63 +104,80 @@
       gap: 8px;
       padding: 12px 18px;
       border-radius: var(--radius-button);
-      font-family: inherit;
+      border: none;
+      font-family: var(--font-family-body);
       font-size: 16px;
       font-weight: 700;
-      line-height: 1;
-      cursor: pointer;
-      border: none;
       text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn:focus-visible {
-      outline: none;
-      box-shadow: var(--shadow-focus-ring);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     .btn--primary-cta {
-      color: var(--white);
       background: linear-gradient(180deg, #FF5252 0%, #F01F1F 100%);
+      color: var(--white);
       box-shadow: var(--shadow-button-primary);
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255,255,255,0.9);
     }
 
     .btn--primary-cta:hover {
-      transform: translateY(-2px);
       box-shadow: 0 12px 28px rgba(240, 31, 31, 0.45);
+      transform: translateY(-2px);
       background: linear-gradient(180deg, #FF6B6B 0%, #D81B1B 100%);
     }
 
+    .btn--primary-cta:active {
+      transform: translateY(0);
+      background: linear-gradient(180deg, #E94848 0%, #BF1717 100%);
+    }
+
     .btn--primary {
-      color: var(--white);
       background: var(--primary-blue-600);
+      color: var(--white);
       box-shadow: 0 8px 18px rgba(10, 60, 187, 0.25);
       border: 1px solid var(--primary-blue-600);
     }
 
     .btn--primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(10, 60, 187, 0.35);
       background: var(--primary-blue-700);
+      box-shadow: 0 12px 24px rgba(10, 60, 187, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn--primary:active {
+      transform: translateY(0);
+      background: #041F8E;
     }
 
     .btn--ghost {
-      color: var(--primary-blue-600);
       background: var(--white);
+      color: var(--primary-blue-600);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-pill);
     }
 
     .btn--ghost:hover {
       border-color: var(--primary-blue-500);
-      box-shadow: 0 8px 18px rgba(10, 60, 187, 0.10);
+      box-shadow: 0 8px 18px rgba(10,60,187,0.10);
     }
 
+    .btn--ghost:active {
+      background: var(--primary-blue-100);
+    }
+
+    .btn--pill {
+      background: var(--white);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-pill);
+    }
+
+    /* Top Bar */
     .topbar {
       background: var(--primary-blue-600);
       color: var(--white);
-      font-size: 14px;
     }
 
     .topbar .container {
@@ -170,23 +187,30 @@
       padding: 12px 20px;
     }
 
-    .topbar .contact-info {
+    .topbar-contact {
       display: flex;
-      align-items: baseline;
-      gap: 12px;
-      font-weight: 600;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .topbar-phone {
+      font-weight: 700;
       font-size: 16px;
     }
 
-    .topbar .contact-info span {
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 500;
+    .topbar-time {
       font-size: 14px;
+      opacity: 0.8;
     }
 
-    .topbar .actions {
+    .topbar-actions {
       display: flex;
       gap: 12px;
+    }
+
+    .topbar .btn {
+      padding: 8px 16px;
+      font-size: 14px;
     }
 
     .topbar .btn--ghost {
@@ -196,499 +220,353 @@
     }
 
     .topbar .btn--ghost:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.1);
       border-color: var(--white);
     }
 
-    header {
+    /* Header */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
     }
 
-    .header-inner {
+    .header .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 20px;
+      padding: 16px 20px;
     }
 
-    .brand {
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      color: var(--text-primary);
     }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
+    .logo-icon {
+      width: 48px;
+      height: 48px;
       background: var(--primary-blue-600);
-      color: var(--white);
       border-radius: 12px;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 20px;
+      color: var(--white);
+      font-family: var(--font-family-head);
+      font-weight: 800;
+      font-size: 18px;
     }
 
-    .brand-title {
-      font-weight: 700;
-      font-size: 20px;
+    .logo-text {
+      font-family: var(--font-family-head);
+      font-size: 24px;
+      font-weight: 800;
       color: var(--text-primary);
-      margin: 0;
     }
 
     .nav {
       display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 0;
-      padding: 0;
+      gap: 32px;
       list-style: none;
     }
 
-    .menu > li {
-      position: relative;
-    }
-
-    .menu-link,
-    .menu-toggle {
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 600;
+    .nav a {
       color: var(--text-primary);
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: transparent;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .menu-link:hover,
-    .menu-toggle:hover {
-      background: rgba(3, 20, 36, 0.05);
-    }
-
-    .menu-toggle:focus-visible {
-      outline: none;
-      box-shadow: var(--shadow-focus-ring);
-    }
-
-    .mega-menu {
-      position: absolute;
-      left: 0;
-      top: calc(100% + 12px);
-      width: min(860px, 90vw);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-card);
-      padding: 28px;
-      display: none;
-      gap: 36px;
-      z-index: 50;
-    }
-
-    .mega-menu.is-open {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .mega-group > span {
-      display: block;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-
-    .mega-group ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .mega-group a {
-      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
       padding: 8px 12px;
       border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
-    .mega-group a:hover {
-      background: var(--primary-blue-100);
+    .nav a:hover {
+      background: rgba(3, 20, 36, 0.04);
       color: var(--primary-blue-600);
-      text-decoration: none;
     }
 
-    .nav-actions {
+    .header-actions {
       display: flex;
       gap: 12px;
-      align-items: center;
     }
 
-    .burger {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .burger span,
-    .burger::before,
-    .burger::after {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--text-primary);
-      border-radius: 999px;
-      transition: transform 0.3s ease;
-      content: "";
-    }
-
-    .burger span {
-      content: none;
-    }
-
+    /* Hero Section */
     .hero {
-      background: linear-gradient(180deg, #F0F5FF 0%, #FFFFFF 100%);
-      padding: 72px 0 80px;
+      background: linear-gradient(180deg, var(--primary-blue-100) 0%, var(--white) 100%);
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 32px;
-      align-items: center;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%230A3CBB'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%230A3CBB'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%230A3CBB'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
-      grid-column: span 7;
+      max-width: 700px;
+      text-align: center;
+      margin: 0 auto;
     }
 
-    .hero-content p {
-      font-size: 18px;
+    .hero h1 {
+      color: var(--primary-blue-600);
+      margin-bottom: 24px;
+    }
+
+    .hero .lead {
       color: var(--text-secondary);
-      margin-bottom: 32px;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
     }
 
-    .hero-cta {
+    .cta-buttons {
       display: flex;
+      gap: 16px;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
-    .hero-note {
-      padding: 24px;
+    .cta-buttons .btn {
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+
+    /* First Contact Panel */
+    .first-contact {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
+      padding: 32px;
       box-shadow: var(--shadow-card);
-      color: var(--text-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .hero-note strong {
-      font-family: "Montserrat", sans-serif;
-      font-size: 18px;
+    .first-contact h3 {
       color: var(--text-primary);
+      margin-bottom: 16px;
     }
 
-    .hero-aside {
-      grid-column: span 5;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .hero-aside .stat-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow-card);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .hero-aside .stat-card span {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--primary-blue-600);
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .experience-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-card);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .experience-card span {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--primary-blue-600);
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .experience-card p {
+    .first-contact p {
       color: var(--text-secondary);
-      margin: 0;
-    }
-
-    .section {
-      padding: 72px 0;
-    }
-
-    .section-header {
-      max-width: 640px;
-      margin-bottom: 40px;
-    }
-
-    .section-header p {
-      color: var(--text-secondary);
+      margin-bottom: 24px;
     }
 
     .media-panel {
-      position: relative;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-card);
-      background: var(--white);
-      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .media-slider {
-      position: relative;
-      overflow: hidden;
+    .media-item {
+      aspect-ratio: 4/3;
+      background: var(--primary-blue-100);
       border-radius: var(--radius-image);
-    }
-
-    .slider-track {
       display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .slide {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .slide img {
-      width: 100%;
-      display: block;
-      border-radius: var(--radius-image);
-    }
-
-    .slide figcaption {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-      background: rgba(13, 29, 49, 0.72);
-      color: var(--white);
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 14px;
-    }
-
-    .slider-controls {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 12px;
-      pointer-events: none;
-    }
-
-    .slider-btn {
-      pointer-events: auto;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow-card);
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .slider-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .slider-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: none;
-      background: var(--primary-blue-200);
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .slider-dot.is-active {
-      background: var(--primary-blue-600);
-      transform: scale(1.1);
-    }
-
-    .callout {
-      background: var(--panel);
-      border-radius: var(--radius-card);
-      padding: 40px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-card);
-    }
-
-    .callout-header {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .callout-header span {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
       color: var(--primary-blue-600);
+      font-size: 24px;
+    }
+
+    /* Contact Callout */
+    .contact-callout {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .contact-callout-content {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .contact-callout h2 {
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .contact-callout .subtitle {
+      color: var(--text-secondary);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .contact-callout .tagline {
+      color: var(--text-muted);
+      font-style: italic;
     }
 
     .contact-methods {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .contact-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
-      padding: 24px;
+      padding: 32px 24px;
+      text-align: center;
       box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .contact-card:hover {
-      transform: translateY(-3px);
       box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
     }
 
-    .contact-card strong {
-      font-size: 18px;
+    .contact-card-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--primary-blue-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--primary-blue-600);
+      font-size: 28px;
+    }
+
+    .contact-card h3 {
       color: var(--text-primary);
+      margin-bottom: 12px;
     }
 
     .contact-card p {
       color: var(--text-secondary);
-      flex-grow: 1;
+      margin-bottom: 24px;
+      line-height: 1.5;
     }
 
-    .interaction-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 32px;
-      align-items: stretch;
-    }
-
-    .interaction-options {
-      grid-column: span 7;
-      display: grid;
-      gap: 20px;
-    }
-
-    .interaction-note {
-      grid-column: span 5;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      padding: 28px;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .interaction-note h3 {
+    .contact-card .badge {
+      background: var(--primary-blue-100);
       color: var(--primary-blue-600);
-      font-size: 22px;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: inline-block;
     }
 
-    .interaction-card {
+    /* Format Selection */
+    .format-selection {
+      background: var(--panel);
+      padding: 80px 0;
+    }
+
+    .format-selection .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .format-main h2 {
+      color: var(--text-primary);
+      margin-bottom: 32px;
+    }
+
+    .format-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .format-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
+    }
+
+    .format-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .format-card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .format-card h4 {
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .format-card p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .format-sidebar {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
+      padding: 32px;
       box-shadow: var(--shadow-card);
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
     }
 
-    .interaction-card p {
+    .format-sidebar h3 {
+      color: var(--accent-red);
+      margin-bottom: 16px;
+    }
+
+    .format-sidebar p {
       color: var(--text-secondary);
-      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    /* Cases Section */
+    .cases-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .cases-section h2 {
+      text-align: center;
+      color: var(--text-primary);
+      margin-bottom: 48px;
     }
 
     .cases-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .case-card {
@@ -697,107 +575,157 @@
       border-radius: 16px;
       padding: 24px;
       box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .case-card:hover {
-      transform: translateY(-2px);
       box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
     }
 
-    .case-card h3 {
-      font-size: 18px;
-      margin-bottom: 4px;
+    .case-card h4 {
+      color: var(--text-primary);
+      margin-bottom: 12px;
     }
 
-    .pricing-grid {
+    .case-card p {
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: linear-gradient(180deg, var(--primary-blue-600) 0%, var(--primary-blue-700) 100%);
+      padding: 80px 0;
+      color: var(--white);
+      position: relative;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+      transform: rotate(180deg);
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--white);
+    }
+
+    .pricing-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .pricing-card {
       background: var(--white);
-      border: 1px solid var(--border);
       border-radius: var(--radius-card);
-      padding: 32px 28px;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      position: relative;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow-floating);
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(2, 8, 23, 0.25);
     }
 
     .pricing-card h3 {
-      font-size: 22px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
     }
 
-    .pricing-card .price {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      color: var(--primary-blue-600);
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .pricing-card .price .amount {
-      font-size: 32px;
+    .pricing-price {
+      font-size: 36px;
       font-weight: 800;
+      color: var(--primary-blue-600);
+      margin-bottom: 8px;
     }
 
-    .pricing-card .price .period {
-      font-size: 16px;
+    .pricing-period {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .pricing-features li {
       color: var(--text-secondary);
+      padding: 8px 0;
+      position: relative;
+      padding-left: 24px;
     }
 
-    .pricing-card ul {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--text-secondary);
-      display: grid;
-      gap: 8px;
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-blue-600);
+      font-weight: 700;
     }
 
+    /* Footer */
     .footer {
       background: var(--white);
       border-top: 1px solid var(--border);
-      padding: 64px 0 40px;
+      padding: 80px 0 40px;
     }
 
-    .footer-grid {
+    .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 40px;
     }
 
-    .footer h2 {
-      font-size: 28px;
+    .footer-main h2 {
+      color: var(--text-primary);
+      margin-bottom: 24px;
     }
 
-    .footer-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
+    .footer-contact {
+      margin-bottom: 32px;
     }
 
-    .footer-links a {
+    .footer-contact-item {
+      margin-bottom: 16px;
+    }
+
+    .footer-contact-item strong {
+      display: block;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-contact-item a {
       color: var(--primary-blue-600);
-      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .footer-bottom {
-      margin-top: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-      color: var(--text-muted);
-      font-size: 14px;
+    .footer-contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact-item span {
+      color: var(--text-secondary);
     }
 
     .footer-actions {
@@ -806,497 +734,577 @@
       flex-wrap: wrap;
     }
 
-    /* Responsive */
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer-column h4 {
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      color: var(--primary-blue-600);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    /* Responsive Design */
     @media (max-width: 1024px) {
-      .hero-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+      .format-selection .container {
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
-
-      .hero-content,
-      .hero-aside,
-      .interaction-options,
-      .interaction-note {
-        grid-column: span 12;
+      
+      .format-cards {
+        grid-template-columns: 1fr;
       }
-
-      .header-inner {
-        gap: 16px;
+      
+      .contact-methods {
+        grid-template-columns: 1fr;
       }
-
-      .burger {
-        display: inline-flex;
+      
+      .pricing-cards {
+        grid-template-columns: 1fr;
       }
-
-      .nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-card);
-        padding: 20px;
-        flex-direction: column;
-        gap: 18px;
+      
+      .footer-content {
+        grid-template-columns: 1fr;
       }
-
-      .nav.is-open {
-        display: flex;
-      }
-
-      .menu {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .mega-menu {
-        position: static;
-        width: 100%;
-        margin-top: 16px;
+      
+      .footer-links {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 36px;
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
       }
-
-      .hero {
-        padding: 48px 0 64px;
-      }
-
-      .callout {
-        padding: 28px;
-      }
-
+      
       .topbar .container {
         flex-direction: column;
         gap: 12px;
-        align-items: flex-start;
+        padding: 16px;
       }
-
-      .topbar .actions {
-        width: 100%;
-        justify-content: flex-start;
+      
+      .header .container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+      }
+      
+      .nav {
         flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
       }
-
-      .slider-controls {
-        display: none;
+      
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 28px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .media-panel {
+        grid-template-columns: 1fr;
+      }
+      
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-links {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-actions {
+        flex-direction: column;
       }
     }
+
+    /* Focus states for accessibility */
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: var(--shadow-focus-ring);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--primary-blue-600);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .contact-card,
+    .format-card,
+    .case-card,
+    .pricing-card {
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .contact-card:nth-child(2) { animation-delay: 0.1s; }
+    .contact-card:nth-child(3) { animation-delay: 0.2s; }
+    .format-card:nth-child(2) { animation-delay: 0.1s; }
+    .format-card:nth-child(3) { animation-delay: 0.2s; }
+    .case-card:nth-child(2) { animation-delay: 0.1s; }
+    .case-card:nth-child(3) { animation-delay: 0.2s; }
+    .case-card:nth-child(4) { animation-delay: 0.3s; }
+    .pricing-card:nth-child(2) { animation-delay: 0.2s; }
   </style>
 </head>
 <body>
+  <!-- Top Bar -->
   <div class="topbar">
     <div class="container">
-      <div class="contact-info">
-        <a href="tel:+74993017761" class="phone" style="color: inherit; text-decoration: none;">+7 (499) 301-77-61</a>
-        <span>Ежедневно 9:00 – 20:00</span>
+      <div class="topbar-contact">
+        <span class="topbar-phone">+7 (967) 555-81-82</span>
+        <span class="topbar-time">Пн-Пт 9:00-19:00</span>
       </div>
-      <div class="actions">
-        <a href="tel:+74993017761" class="btn btn--ghost">Позвонить</a>
-        <a href="#contact" class="btn btn--ghost">Заказать звонок</a>
+      <div class="topbar-actions">
+        <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
+        <a href="#callback" class="btn btn--ghost">Заказать звонок</a>
       </div>
     </div>
   </div>
 
-  <header>
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <span class="brand-mark">Z</span>
-        <span class="brand-title">ZGT Право</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">ЗГТ</div>
+        <span class="logo-text">Право</span>
       </a>
-      <button class="burger" type="button" aria-label="Открыть меню" data-burger>
-        <span></span>
-      </button>
-      <nav class="nav" aria-label="Главная навигация" data-nav>
-        <ul class="menu">
-          <li class="menu-item menu-item--services">
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="services-menu" data-mega-toggle>
-              Услуги
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </button>
-            <div class="mega-menu" id="services-menu" role="menu">
-              <div class="mega-group">
-                <span>По заказчикам</span>
-                <ul>
-                  <li><a href="#cta-individuals" role="menuitem">Для физических лиц</a></li>
-                  <li><a href="#cta-business" role="menuitem">Для юридических лиц</a></li>
-                </ul>
-              </div>
-              <div class="mega-group">
-                <span>По практикам</span>
-                <ul>
-                  <li><a href="#cases" role="menuitem">Семейные споры</a></li>
-                  <li><a href="#cases" role="menuitem">Жилищные вопросы</a></li>
-                  <li><a href="https://example.com/bankrotstvo" target="_blank" rel="noopener" role="menuitem">Банкротство физических лиц</a></li>
-                  <li><a href="#cases" role="menuitem">Трудовые отношения</a></li>
-                </ul>
-              </div>
-              <div class="mega-group">
-                <span>По отраслям</span>
-                <ul>
-                  <li><a href="#cases" role="menuitem">Строительство</a></li>
-                  <li><a href="#cases" role="menuitem">Недвижимость</a></li>
-                  <li><a href="#cases" role="menuitem">Образование</a></li>
-                  <li><a href="#cases" role="menuitem">Финансы и инвестиции</a></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li><a class="menu-link" href="#pricing">Цены</a></li>
-          <li><a class="menu-link" href="#experience">Наш опыт</a></li>
-          <li><a class="menu-link" href="#knowledge">База знаний</a></li>
-          <li><a class="menu-link" href="#about">О нас</a></li>
+      
+      <nav>
+        <ul class="nav">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#pricing">Цены</a></li>
+          <li><a href="#experience">Наш опыт</a></li>
+          <li><a href="#knowledge">База знаний</a></li>
+          <li><a href="#about">О нас</a></li>
         </ul>
-        <div class="nav-actions">
-          <a href="#contact" class="btn btn--primary">Связаться</a>
-        </div>
       </nav>
+      
+      <div class="header-actions">
+        <a href="#contact" class="btn btn--ghost">Связаться</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Комплексные юридические решения для бизнеса и частных клиентов</h1>
-          <p>Работаем быстро, предсказуемо и прозрачно: от первой консультации до сопровождения сложных судебных дел.</p>
-          <div class="hero-cta">
-            <a id="cta-individuals" href="#contact" class="btn btn--primary-cta">Для физических лиц</a>
-            <a id="cta-business" href="#contact" class="btn btn--primary">Для юридических лиц</a>
-          </div>
-          <div class="hero-note">
-            <strong>Приоритет — ваше спокойствие</strong>
-            <p>Выстраиваем стратегию, исходя из вашей ситуации и бюджета, подключая экспертов по нужным практикам.</p>
-          </div>
-        </div>
-        <div class="hero-aside">
-          <div class="stat-card">
-            <span>15+ лет</span>
-            <p>Решаем юридические задачи для компаний и частных лиц по всей России.</p>
-          </div>
-          <div class="stat-card">
-            <span>1200+ дел</span>
-            <p>Сформировали портфель успешных кейсов по имущественным, корпоративным и семейным вопросам.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-header">
-          <h2>Наш опыт</h2>
-          <p>Работаем с компаниями, предпринимателями и семьями, помогая им решать правовые задачи без лишних рисков и задержек.</p>
-        </div>
-        <div class="experience-grid">
-          <div class="experience-card">
-            <span>85%</span>
-            <p>Споров закрываем на досудебной стадии за счёт сильной переговорной позиции и точной подготовки документов.</p>
-          </div>
-          <div class="experience-card">
-            <span>40 регионов</span>
-            <p>Представляем клиентов дистанционно и очно, выезжаем на заседания и защищаем интересы в любых юрисдикциях.</p>
-          </div>
-          <div class="experience-card">
-            <span>4 направления</span>
-            <p>Корпоративная, семейная, имущественная и трудовая практики — формируем команды под конкретную задачу.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="first-touch">
-      <div class="container">
-        <div class="section-header">
-          <h2>При первом обращении к нам</h2>
-          <p>Познакомим вас с командой, оценим задачу и предложим стратегию действий. Уже на старте вы получите пошаговый план.</p>
-        </div>
-        <div class="media-panel" role="region" aria-label="Примеры первой консультации">
-          <div class="media-slider" data-slider>
-            <div class="slider-track" data-slider-track>
-              <figure class="slide">
-                <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Команда юристов обсуждает задачу клиента" />
-                <figcaption>Знакомство с командой и сбор фактов</figcaption>
-              </figure>
-              <figure class="slide">
-                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80" alt="Юрист готовит документы для клиента" />
-                <figcaption>Подготовка первичных документов</figcaption>
-              </figure>
-              <figure class="slide">
-                <img src="https://images.unsplash.com/photo-1521790366321-3e7b48c53127?auto=format&fit=crop&w=1200&q=80" alt="Презентация стратегии на экране ноутбука" />
-                <figcaption>Презентация стратегии и сроков</figcaption>
-              </figure>
-            </div>
-            <div class="slider-controls">
-              <button class="slider-btn" type="button" aria-label="Предыдущий" data-slider-prev>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M15 18l-6-6 6-6" stroke="#0D1D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <button class="slider-btn" type="button" aria-label="Следующий" data-slider-next>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 6l6 6-6 6" stroke="#0D1D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="slider-dots" data-slider-dots></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="callout">
-          <div class="callout-header">
-            <h2>Готовы подключиться к вашей ситуации</h2>
-            <p><span>/ Свяжитесь с нами, это бесплатно</span></p>
-            <p>Расскажите о своей задаче любым удобным способом — мы предложим варианты решения и обсудим условия работы.</p>
-          </div>
-          <div class="contact-methods">
-            <div class="contact-card">
-              <strong>По телефону</strong>
-              <p>Перезвоним в течение 10 минут и ответим на ваши вопросы.</p>
-              <a class="btn btn--primary" href="tel:+74993017761">Позвонить</a>
-            </div>
-            <div class="contact-card">
-              <strong>В чате</strong>
-              <p>Закрепим за вами персонального юриста и начнём диалог прямо сейчас.</p>
-              <a class="btn btn--primary-cta" href="#">Написать в чат</a>
-            </div>
-            <div class="contact-card">
-              <strong>По почте</strong>
-              <p>Пришлите документы и опишите задачу — вернёмся с ответом в день обращения.</p>
-              <a class="btn btn--ghost" href="mailto:info@zgt-pravo.ru">Отправить письмо</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="consultation-format">
-      <div class="container">
-        <div class="section-header">
-          <h2>Вам нужно получить разовую консультацию?</h2>
-          <p>Выберите формат взаимодействия в зависимости от того, на каком этапе вы сейчас находитесь.</p>
-        </div>
-        <div class="interaction-grid">
-          <div class="interaction-options">
-            <div class="interaction-card">
-              <h3>Определить способ</h3>
-              <p>Поможем разобраться, какие инструменты задействовать и какие документы подготовить в первую очередь.</p>
-              <a class="btn btn--primary" href="#">Записаться</a>
-            </div>
-            <div class="interaction-card">
-              <h3>Горящая проблема</h3>
-              <p>Подключимся оперативно, чтобы удержать ситуацию под контролем и минимизировать риски.</p>
-              <a class="btn btn--primary-cta" href="#">Вызвать юриста</a>
-            </div>
-            <div class="interaction-card">
-              <h3>Принять решение</h3>
-              <p>Подготовим юридическое заключение, оценим риски и дадим рекомендации по дальнейшим шагам.</p>
-              <a class="btn btn--ghost" href="#">Получить заключение</a>
-            </div>
-          </div>
-          <aside class="interaction-note">
-            <h3>У вас проблема требующая комплексного подхода?!</h3>
-            <p>Мы соберём команду профильных юристов, возьмём на себя коммуникацию с оппонентами и государственными органами, будем держать вас в курсе и сопровождать на каждом этапе процесса.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cases">
-      <div class="container">
-        <div class="section-header">
-          <h2>Сценарии, с которыми к нам приходят</h2>
-          <p>Каждая история уникальна, но мы знаем, как быстро оценить риски и предложить реалистичный план действий.</p>
-        </div>
-        <div class="cases-grid">
-          <div class="case-card">
-            <h3>Конфликт с застройщиком</h3>
-            <p>Сопровождаем переговоры, фиксируем нарушения, готовим претензии и выходим в суд при необходимости.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-          <div class="case-card">
-            <h3>Соседи нарушают границы</h3>
-            <p>Проводим анализ документов, защищаем ваши права на землю и помогаем урегулировать спор.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-          <div class="case-card">
-            <h3>Мошенничество с вкладом</h3>
-            <p>Помогаем вернуть деньги, подключаем силовые структуры и готовим судебную стратегию.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-          <div class="case-card">
-            <h3>Школа нарушает права ребёнка</h3>
-            <p>Разбираемся в ситуации, подключаем департаменты образования и добиваемся восстановления прав.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-          <div class="case-card">
-            <h3>Спор с подрядчиком</h3>
-            <p>Проверяем договоры, инициируем претензионную работу и сопровождаем арбитраж.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-          <div class="case-card">
-            <h3>Давление проверяющих органов</h3>
-            <p>Представляем ваши интересы, оспариваем штрафы и защищаем репутацию компании.</p>
-            <a class="btn btn--primary" href="#contact">Получить консультацию</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <h2>Абонементы и тарифы</h2>
-          <p>Закрепите команду юристов на год и получайте поддержку, когда она нужна.</p>
-        </div>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <h3>Абонемент для физических лиц</h3>
-            <div class="price">
-              <span class="amount">15 000 ₽</span>
-              <span class="period">/год</span>
-            </div>
-            <ul>
-              <li>Персональный юрист 24/7</li>
-              <li>Подготовка заявлений и претензий</li>
-              <li>Сопровождение в переговорах</li>
-            </ul>
-            <a class="btn btn--primary" href="#contact">Оставить заявку</a>
-          </div>
-          <div class="pricing-card">
-            <h3>Абонемент для юридических лиц</h3>
-            <div class="price">
-              <span class="amount">120 000 ₽</span>
-              <span class="period">/год</span>
-            </div>
-            <ul>
-              <li>Комплексное сопровождение бизнеса</li>
-              <li>Правовая экспертиза договоров</li>
-              <li>Представительство в судах и органах</li>
-            </ul>
-            <a class="btn btn--primary-cta" href="#contact">Обсудить условия</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="about">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h2>Остались вопросы? Пишите или звоните</h2>
-          <p>Мы на связи каждый день. Расскажите о своей задаче — предложим первый шаг уже сегодня.</p>
-          <div class="footer-actions">
-            <a class="btn btn--primary-cta" href="#contact">Заказать звонок</a>
-            <a class="btn btn--primary" href="tel:+74993017761">Позвонить</a>
+      <div class="hero-content">
+        <h1>Профессиональная юридическая помощь</h1>
+        <p class="lead">Защищаем права и интересы физических и юридических лиц. Более 10 лет успешной практики в различных отраслях права.</p>
+        
+        <div class="cta-buttons">
+          <a href="#individual" class="btn btn--primary-cta">Для физических лиц</a>
+          <a href="#business" class="btn btn--primary-cta">Для юридических лиц</a>
+        </div>
+        
+        <div class="first-contact">
+          <h3>При первом обращении к нам</h3>
+          <p>Получите бесплатную консультацию и оценку перспектив вашего дела</p>
+          <div class="media-panel">
+            <div class="media-item">📋</div>
+            <div class="media-item">⚖️</div>
+            <div class="media-item">✅</div>
           </div>
-        </div>
-        <div>
-          <h3>Контакты</h3>
-          <p><strong>Телефоны:</strong><br />
-            <a href="tel:+74993017761">+7 (499) 301-77-61</a><br />
-            <a href="tel:+79675558182">+7 (967) 555-81-82</a>
-          </p>
-          <p><strong>Email:</strong><br />
-            <a href="mailto:info@zgt-pravo.ru">info@zgt-pravo.ru</a>
-          </p>
-        </div>
-        <div id="knowledge">
-          <h3>Навигация</h3>
-          <ul class="footer-links">
-            <li><a href="#experience">Портфолио</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#contact">Контакты</a></li>
-            <li><a href="#pricing">Цены</a></li>
-            <li><a href="#knowledge">База знаний</a></li>
-          </ul>
+          <p><small>Анализ документов • Правовая оценка • План действий</small></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact Callout -->
+  <section class="contact-callout">
+    <div class="container">
+      <div class="contact-callout-content">
+        <h2>Нужна помощь? Обратитесь к нам</h2>
+        <p class="subtitle">Выберите удобный способ связи</p>
+        <p class="tagline">/ Свяжитесь с нами, это бесплатно</p>
+      </div>
+      
+      <div class="contact-methods">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="badge">Быстро</div>
+          <h3>По телефону</h3>
+          <p>Получите консультацию прямо сейчас. Наши юристы готовы ответить на ваши вопросы.</p>
+          <a href="tel:+79675558182" class="btn btn--primary">Позвонить сейчас</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <div class="badge">Удобно</div>
+          <h3>В чате</h3>
+          <p>Задайте вопрос в мессенджере. Общайтесь в удобное для вас время.</p>
+          <a href="#chat" class="btn btn--primary">Написать в чат</a>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div class="badge">Подробно</div>
+          <h3>По почте</h3>
+          <p>Отправьте детальное описание вашей ситуации для получения развернутого ответа.</p>
+          <a href="mailto:zgt-mail@yandex.ru" class="btn btn--primary">Написать письмо</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Format Selection -->
+  <section class="format-selection">
+    <div class="container">
+      <div class="format-main">
+        <h2>Вам нужно получить разовую консультацию?</h2>
+        
+        <div class="format-cards">
+          <div class="format-card">
+            <div class="format-card-icon">🎯</div>
+            <h4>Определить способ</h4>
+            <p>Поможем выбрать оптимальную стратегию решения вашей правовой задачи</p>
+            <a href="#strategy" class="btn btn--ghost">Узнать больше</a>
+          </div>
+          
+          <div class="format-card">
+            <div class="format-card-icon">🔥</div>
+            <h4>Горящая проблема</h4>
+            <p>Срочная юридическая помощь в критических ситуациях</p>
+            <a href="#urgent" class="btn btn--ghost">Срочная помощь</a>
+          </div>
+          
+          <div class="format-card">
+            <div class="format-card-icon">💡</div>
+            <h4>Принять решение</h4>
+            <p>Комплексный анализ ситуации и рекомендации по действиям</p>
+            <a href="#analysis" class="btn btn--ghost">Получить анализ</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="format-sidebar">
+        <h3>У вас проблема, требующая комплексного подхода?!</h3>
+        <p>Некоторые правовые вопросы требуют длительного сопровождения и системного решения. В таких случаях мы предлагаем полное юридическое сопровождение с постоянным контролем процесса.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cases Section -->
+  <section class="cases-section">
+    <div class="container">
+      <h2>Частые ситуации наших клиентов</h2>
+      
+      <div class="cases-grid">
+        <div class="case-card">
+          <h4>Строители не сдают объект вовремя</h4>
+          <p>Поможем взыскать неустойку с застройщика и защитить права дольщика в суде</p>
+          <a href="#construction" class="btn btn--ghost">Получить консультацию</a>
+        </div>
+        
+        <div class="case-card">
+          <h4>Конфликт с шумными соседями</h4>
+          <p>Юридическое решение споров с соседями по поводу нарушения тишины</p>
+          <a href="#neighbors" class="btn btn--ghost">Получить консультацию</a>
+        </div>
+        
+        <div class="case-card">
+          <h4>Стали жертвой мошенников</h4>
+          <p>Поможем вернуть деньги и привлечь мошенников к ответственности</p>
+          <a href="#fraud" class="btn btn--ghost">Получить консультацию</a>
+        </div>
+        
+        <div class="case-card">
+          <h4>Проблемы ребёнка в школе</h4>
+          <p>Защита прав детей и родителей в образовательных учреждениях</p>
+          <a href="#school" class="btn btn--ghost">Получить консультацию</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2>Абонементы на юридическое обслуживание</h2>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Абонемент для физических лиц</h3>
+          <div class="pricing-price">15 000 ₽</div>
+          <div class="pricing-period">в год</div>
+          
+          <ul class="pricing-features">
+            <li>Неограниченные консультации по телефону</li>
+            <li>Подготовка и проверка документов</li>
+            <li>Представительство в государственных органах</li>
+            <li>Сопровождение сделок</li>
+            <li>Приоритетная поддержка</li>
+          </ul>
+          
+          <a href="#individual-plan" class="btn btn--primary-cta">Выбрать план</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Абонемент для юридических лиц</h3>
+          <div class="pricing-price">120 000 ₽</div>
+          <div class="pricing-period">в год</div>
+          
+          <ul class="pricing-features">
+            <li>Полное юридическое сопровождение</li>
+            <li>Корпоративное право и управление</li>
+            <li>Договорная работа любой сложности</li>
+            <li>Представительство в судах</li>
+            <li>Персональный юрист</li>
+            <li>Круглосуточная поддержка</li>
+          </ul>
+          
+          <a href="#business-plan" class="btn btn--primary-cta">Выбрать план</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <h2>Остались вопросы? Пишите или звоните</h2>
+          
+          <div class="footer-contact">
+            <div class="footer-contact-item">
+              <strong>Телефоны:</strong>
+              <a href="tel:+79675558182">+7 (967) 555-81-82</a>
+              <a href="tel:+74993017761">+7 (499) 301-77-61</a>
+            </div>
+            
+            <div class="footer-contact-item">
+              <strong>Email:</strong>
+              <a href="mailto:zgt-mail@yandex.ru">zgt-mail@yandex.ru</a>
+            </div>
+            
+            <div class="footer-contact-item">
+              <strong>Время работы:</strong>
+              <span>Понедельник — Пятница: 9:00 — 19:00</span>
+            </div>
+          </div>
+          
+          <div class="footer-actions">
+            <a href="#callback" class="btn btn--primary-cta">Заказать звонок</a>
+            <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
+            <a href="mailto:zgt-mail@yandex.ru" class="btn btn--ghost">Написать письмо</a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Услуги</h4>
+            <ul>
+              <li><a href="#individual">Для физических лиц</a></li>
+              <li><a href="#business">Для юридических лиц</a></li>
+              <li><a href="#consultation">Консультации</a></li>
+              <li><a href="#representation">Представительство</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Информация</h4>
+            <ul>
+              <li><a href="#portfolio">Портфолио</a></li>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#experience">Наш опыт</a></li>
+              <li><a href="#knowledge">База знаний</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="#pricing">Цены</a></li>
+              <li><a href="#contact">Контакты</a></li>
+              <li><a href="#callback">Обратный звонок</a></li>
+              <li><a href="#chat">Онлайн-чат</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
       <div class="footer-bottom">
-        <span>&copy; 2024 ZGT Право. Все права защищены.</span>
-        <a href="#">Политика конфиденциальности</a>
+        <p>&copy; 2024 ЗГТ Право. Все права защищены. Профессиональные юридические услуги.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    (function () {
-      const burger = document.querySelector('[data-burger]');
-      const nav = document.querySelector('[data-nav]');
-      const megaToggle = document.querySelector('[data-mega-toggle]');
-      const megaMenu = document.querySelector('#services-menu');
-
-      if (burger) {
-        burger.addEventListener('click', () => {
-          const isOpen = nav.classList.toggle('is-open');
-          burger.setAttribute('aria-expanded', String(isOpen));
-        });
-      }
-
-      if (megaToggle && megaMenu) {
-        megaToggle.addEventListener('click', () => {
-          const isOpen = megaMenu.classList.toggle('is-open');
-          megaToggle.setAttribute('aria-expanded', String(isOpen));
-        });
-
-        document.addEventListener('click', (event) => {
-          if (!megaMenu.contains(event.target) && !megaToggle.contains(event.target)) {
-            megaMenu.classList.remove('is-open');
-            megaToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-
-      const slider = document.querySelector('[data-slider]');
-      if (!slider) return;
-      const track = slider.querySelector('[data-slider-track]');
-      const slides = Array.from(track.children);
-      const prev = slider.querySelector('[data-slider-prev]');
-      const next = slider.querySelector('[data-slider-next]');
-      const dotsContainer = slider.parentElement.querySelector('[data-slider-dots]');
-      let currentIndex = 0;
-
-      function renderDots() {
-        dotsContainer.innerHTML = '';
-        slides.forEach((_, index) => {
-          const dot = document.createElement('button');
-          dot.className = 'slider-dot' + (index === currentIndex ? ' is-active' : '');
-          dot.type = 'button';
-          dot.setAttribute('aria-label', `Перейти к слайду ${index + 1}`);
-          dot.addEventListener('click', () => goToSlide(index));
-          dotsContainer.appendChild(dot);
-        });
-      }
-
-      function goToSlide(index) {
-        currentIndex = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        renderDots();
-      }
-
-      prev.addEventListener('click', () => goToSlide(currentIndex - 1));
-      next.addEventListener('click', () => goToSlide(currentIndex + 1));
-      renderDots();
-
-      let autoPlay = setInterval(() => goToSlide(currentIndex + 1), 7000);
-
-      slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
-      slider.addEventListener('mouseleave', () => {
-        autoPlay = setInterval(() => goToSlide(currentIndex + 1), 7000);
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
-    })();
+    });
+
+    // Form submission handling
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('a[href="#callback"], a[href="#chat"], a[href^="mailto:"], a[href^="tel:"]')) {
+        // Allow default behavior for actual contact links
+        return;
+      }
+      
+      if (e.target.matches('a[href^="#"], .btn')) {
+        const text = e.target.textContent.trim();
+        
+        // Show appropriate message based on button text
+        if (text.includes('консультацию') || text.includes('помощь') || text.includes('анализ')) {
+          showNotification('Форма заявки на консультацию будет добавлена в полной версии сайта');
+        } else if (text.includes('план') || text.includes('тариф')) {
+          showNotification('Форма оформления абонемента будет добавлена в полной версии сайта');
+        } else if (text.includes('больше') || text.includes('подробнее')) {
+          showNotification('Детальная информация будет добавлена в полной версии сайта');
+        }
+      }
+    });
+
+    // Simple notification system
+    function showNotification(message) {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--primary-blue-600);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: var(--shadow-floating);
+        z-index: 1000;
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 1.4;
+        animation: slideInRight 0.3s ease-out;
+      `;
+      notification.textContent = message;
+      
+      // Add slide-in animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideInRight {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOutRight {
+          from { transform: translateX(0); opacity: 1; }
+          to { transform: translateX(100%); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(notification);
+      
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-in';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    // Add intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observe animated elements
+    document.querySelectorAll('.contact-card, .format-card, .case-card, .pricing-card').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+
+    // Header scroll effect
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
   </script>
 </body>
 </html>
