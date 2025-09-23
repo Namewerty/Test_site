@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЗГТ Право - Юридические услуги</title>
+  <meta name="description" content="Профессиональные юридические услуги для физических и юридических лиц. Консультации, представительство в суде, сопровождение сделок.">
+  
+  <style>
+    /* Simple version without external dependencies */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #0D1D31;
+      background: #FFFFFF;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Typography */
+    h1 {
+      font-size: 48px;
+      line-height: 1.16;
+      font-weight: 800;
+    }
+    
+    h2 {
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    
+    h3 {
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .btn--primary {
+      background: #0A3CBB;
+      color: #FFFFFF;
+      border: 1px solid #0A3CBB;
+    }
+    
+    .btn--primary:hover {
+      background: #052BAE;
+      transform: translateY(-2px);
+    }
+    
+    .btn--primary-cta {
+      background: linear-gradient(180deg, #FF5252 0%, #F01F1F 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+    
+    .btn--primary-cta:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(180deg, #FF6B6B 0%, #D81B1B 100%);
+    }
+    
+    /* Layout */
+    .topbar {
+      background: #0A3CBB;
+      color: #FFFFFF;
+      padding: 12px 0;
+    }
+    
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    .header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E0E4EE;
+      padding: 16px 0;
+    }
+    
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #0D1D31;
+    }
+    
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #0A3CBB;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    
+    .logo-text {
+      font-size: 24px;
+      font-weight: 800;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    
+    .nav a {
+      color: #0D1D31;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    
+    .nav a:hover {
+      background: rgba(3, 20, 36, 0.04);
+      color: #0A3CBB;
+    }
+    
+    .hero {
+      background: linear-gradient(180deg, #F0F5FF 0%, #FFFFFF 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      color: #0A3CBB;
+      margin-bottom: 24px;
+    }
+    
+    .hero .lead {
+      color: #3B4E6D;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    
+    .cta-buttons .btn {
+      padding: 16px 32px;
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E0E4EE;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(2, 8, 23, 0.10);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(2, 8, 23, 0.14);
+    }
+    
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      background: #F0F5FF;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    
+    .card h3 {
+      margin-bottom: 12px;
+    }
+    
+    .card p {
+      color: #3B4E6D;
+      margin-bottom: 24px;
+    }
+    
+    .pricing-section {
+      background: linear-gradient(180deg, #0A3CBB 0%, #052BAE 100%);
+      color: #FFFFFF;
+    }
+    
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+    
+    .pricing-card {
+      background: #FFFFFF;
+      color: #0D1D31;
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(2, 8, 23, 0.20);
+    }
+    
+    .pricing-price {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0A3CBB;
+      margin: 16px 0 8px;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin: 24px 0 32px;
+      text-align: left;
+    }
+    
+    .pricing-features li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 24px;
+      color: #3B4E6D;
+    }
+    
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0A3CBB;
+      font-weight: 700;
+    }
+    
+    .footer {
+      background: #FFFFFF;
+      border-top: 1px solid #E0E4EE;
+      padding: 80px 0 40px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    
+    .footer h2 {
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    
+    .footer-contact {
+      margin-bottom: 32px;
+    }
+    
+    .footer-contact-item {
+      margin-bottom: 16px;
+    }
+    
+    .footer-contact-item strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .footer-contact-item a {
+      color: #0A3CBB;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    .footer-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #E0E4EE;
+      padding-top: 24px;
+      text-align: center;
+      color: #698AB0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 28px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav {
+        gap: 16px;
+        justify-content: center;
+      }
+      
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div>
+        <strong>+7 (967) 555-81-82</strong>
+        <span style="opacity: 0.8; margin-left: 16px;">Пн-Пт 9:00-19:00</span>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">ЗГТ</div>
+        <span class="logo-text">Право</span>
+      </a>
+      
+      <nav>
+        <ul class="nav">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#pricing">Цены</a></li>
+          <li><a href="#experience">Опыт</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      
+      <div>
+        <a href="#contact" class="btn btn--primary">Связаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="individual">
+    <div class="container">
+      <h1>Профессиональная юридическая помощь</h1>
+      <p class="lead">Защищаем права и интересы физических и юридических лиц. Более 10 лет успешной практики в различных отраслях права.</p>
+      
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn--primary-cta">Для физических лиц</a>
+        <a href="#pricing" class="btn btn--primary-cta">Для юридических лиц</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <h3>По телефону</h3>
+          <p>Получите консультацию прямо сейчас. Наши юристы готовы ответить на ваши вопросы.</p>
+          <a href="tel:+79675558182" class="btn btn--primary">Позвонить сейчас</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>В чате</h3>
+          <p>Задайте вопрос в мессенджере. Общайтесь в удобное для вас время.</p>
+          <a href="mailto:zgt-mail@yandex.ru" class="btn btn--primary">Написать в чат</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">📧</div>
+          <h3>По почте</h3>
+          <p>Отправьте детальное описание вашей ситуации для получения развернутого ответа.</p>
+          <a href="mailto:zgt-mail@yandex.ru" class="btn btn--primary">Написать письмо</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience" style="background: #F9F9FA;">
+    <div class="container">
+      <h2>Частые ситуации наших клиентов</h2>
+      
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Строители не сдают объект вовремя</h3>
+          <p>Поможем взыскать неустойку с застройщика и защитить права дольщика в суде</p>
+          <a href="#contact" class="btn btn--primary">Получить консультацию</a>
+        </div>
+        
+        <div class="card">
+          <h3>Конфликт с шумными соседями</h3>
+          <p>Юридическое решение споров с соседями по поводу нарушения тишины</p>
+          <a href="#contact" class="btn btn--primary">Получить консультацию</a>
+        </div>
+        
+        <div class="card">
+          <h3>Стали жертвой мошенников</h3>
+          <p>Поможем вернуть деньги и привлечь мошенников к ответственности</p>
+          <a href="#contact" class="btn btn--primary">Получить консультацию</a>
+        </div>
+        
+        <div class="card">
+          <h3>Проблемы ребёнка в школе</h3>
+          <p>Защита прав детей и родителей в образовательных учреждениях</p>
+          <a href="#contact" class="btn btn--primary">Получить консультацию</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section section" id="pricing">
+    <div class="container">
+      <h2>Абонементы на юридическое обслуживание</h2>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Абонемент для физических лиц</h3>
+          <div class="pricing-price">15 000 ₽</div>
+          <div style="color: #698AB0; margin-bottom: 24px;">в год</div>
+          
+          <ul class="pricing-features">
+            <li>Неограниченные консультации по телефону</li>
+            <li>Подготовка и проверка документов</li>
+            <li>Представительство в государственных органах</li>
+            <li>Сопровождение сделок</li>
+            <li>Приоритетная поддержка</li>
+          </ul>
+          
+          <a href="#contact" class="btn btn--primary-cta">Выбрать план</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Абонемент для юридических лиц</h3>
+          <div class="pricing-price">120 000 ₽</div>
+          <div style="color: #698AB0; margin-bottom: 24px;">в год</div>
+          
+          <ul class="pricing-features">
+            <li>Полное юридическое сопровождение</li>
+            <li>Корпоративное право и управление</li>
+            <li>Договорная работа любой сложности</li>
+            <li>Представительство в судах</li>
+            <li>Персональный юрист</li>
+            <li>Круглосуточная поддержка</li>
+          </ul>
+          
+          <a href="#contact" class="btn btn--primary-cta">Выбрать план</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h2>Остались вопросы? Пишите или звоните</h2>
+          
+          <div class="footer-contact">
+            <div class="footer-contact-item">
+              <strong>Телефоны:</strong>
+              <a href="tel:+79675558182">+7 (967) 555-81-82</a>
+              <a href="tel:+74993017761">+7 (499) 301-77-61</a>
+            </div>
+            
+            <div class="footer-contact-item">
+              <strong>Email:</strong>
+              <a href="mailto:zgt-mail@yandex.ru">zgt-mail@yandex.ru</a>
+            </div>
+            
+            <div class="footer-contact-item">
+              <strong>Время работы:</strong>
+              <span style="color: #3B4E6D;">Понедельник — Пятница: 9:00 — 19:00</span>
+            </div>
+          </div>
+          
+          <div class="footer-actions">
+            <a href="tel:+79675558182" class="btn btn--primary-cta">Заказать звонок</a>
+            <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
+            <a href="mailto:zgt-mail@yandex.ru" class="btn" style="background: #FFFFFF; color: #0A3CBB; border: 1px solid #E0E4EE;">Написать письмо</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 ЗГТ Право. Все права защищены. Профессиональные юридические услуги.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Simple notification for demo buttons
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('a[href="#contact"], .btn') && e.target.getAttribute('href') === '#contact') {
+        e.preventDefault();
+        alert('Форма заявки будет добавлена в полной версии сайта. Пожалуйста, позвоните по телефону или напишите на email.');
+      }
+    });
+  </script>
+</body>
+</html>

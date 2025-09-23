@@ -2,7 +2,7 @@
   "name": "zgt-pravo-website",
   "version": "1.0.0",
   "description": "Сайт юридической фирмы ЗГТ Право - профессиональные юридические услуги для физических и юридических лиц",
-  "main": "public/index.html",
+  "main": "index.html",
   "scripts": {
     "dev": "live-server --port=3000 --open=index.html",
     "build:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --minify",

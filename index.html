@@ -6,10 +6,10 @@
   <title>ЗГТ Право - Юридические услуги для физических и юридических лиц</title>
   <meta name="description" content="Профессиональные юридические услуги для физических и юридических лиц. Консультации, представительство в суде, сопровождение сделок.">
   
-  <!-- Fonts -->
+  <!-- Fonts - fallback to system fonts for better hosting compatibility -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Manrope:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   
   <!-- Design System CSS -->
   <link rel="stylesheet" href="src/styles/globals.css">
@@ -237,6 +237,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: transform 0.3s ease;
     }
 
     .header .container {
@@ -311,12 +312,12 @@
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -50px;
+      bottom: -20px;
       left: 0;
       right: 0;
-      height: 100px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%230A3CBB'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%230A3CBB'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%230A3CBB'/%3E%3C/svg%3E") no-repeat;
-      background-size: cover;
+      height: 40px;
+      background: linear-gradient(to right, var(--primary-blue-600), var(--primary-blue-500));
+      clip-path: polygon(0 0, 100% 20px, 100% 100%, 0 80%);
       z-index: 1;
     }
 
@@ -611,13 +612,12 @@
     .pricing-section::before {
       content: '';
       position: absolute;
-      top: -50px;
+      top: -20px;
       left: 0;
       right: 0;
-      height: 100px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat;
-      background-size: cover;
-      transform: rotate(180deg);
+      height: 40px;
+      background: var(--white);
+      clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
     }
 
     .pricing-section h2 {
@@ -912,7 +912,7 @@
       </div>
       <div class="topbar-actions">
         <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
-        <a href="#callback" class="btn btn--ghost">Заказать звонок</a>
+        <a href="#contact" class="btn btn--ghost">Заказать звонок</a>
       </div>
     </div>
   </div>
@@ -942,15 +942,15 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="individual">
     <div class="container">
       <div class="hero-content">
         <h1>Профессиональная юридическая помощь</h1>
         <p class="lead">Защищаем права и интересы физических и юридических лиц. Более 10 лет успешной практики в различных отраслях права.</p>
         
         <div class="cta-buttons">
-          <a href="#individual" class="btn btn--primary-cta">Для физических лиц</a>
-          <a href="#business" class="btn btn--primary-cta">Для юридических лиц</a>
+          <a href="#contact" class="btn btn--primary-cta">Для физических лиц</a>
+          <a href="#pricing" class="btn btn--primary-cta">Для юридических лиц</a>
         </div>
         
         <div class="first-contact">
@@ -990,7 +990,7 @@
           <div class="badge">Удобно</div>
           <h3>В чате</h3>
           <p>Задайте вопрос в мессенджере. Общайтесь в удобное для вас время.</p>
-          <a href="#chat" class="btn btn--primary">Написать в чат</a>
+          <a href="mailto:zgt-mail@yandex.ru" class="btn btn--primary">Написать в чат</a>
         </div>
         
         <div class="contact-card">
@@ -1005,7 +1005,7 @@
   </section>
 
   <!-- Format Selection -->
-  <section class="format-selection">
+  <section class="format-selection" id="services">
     <div class="container">
       <div class="format-main">
         <h2>Вам нужно получить разовую консультацию?</h2>
@@ -1015,21 +1015,21 @@
             <div class="format-card-icon">🎯</div>
             <h4>Определить способ</h4>
             <p>Поможем выбрать оптимальную стратегию решения вашей правовой задачи</p>
-            <a href="#strategy" class="btn btn--ghost">Узнать больше</a>
+            <a href="#contact" class="btn btn--ghost">Узнать больше</a>
           </div>
           
           <div class="format-card">
             <div class="format-card-icon">🔥</div>
             <h4>Горящая проблема</h4>
             <p>Срочная юридическая помощь в критических ситуациях</p>
-            <a href="#urgent" class="btn btn--ghost">Срочная помощь</a>
+            <a href="tel:+79675558182" class="btn btn--ghost">Срочная помощь</a>
           </div>
           
           <div class="format-card">
             <div class="format-card-icon">💡</div>
             <h4>Принять решение</h4>
             <p>Комплексный анализ ситуации и рекомендации по действиям</p>
-            <a href="#analysis" class="btn btn--ghost">Получить анализ</a>
+            <a href="#contact" class="btn btn--ghost">Получить анализ</a>
           </div>
         </div>
       </div>
@@ -1042,7 +1042,7 @@
   </section>
 
   <!-- Cases Section -->
-  <section class="cases-section">
+  <section class="cases-section" id="experience">
     <div class="container">
       <h2>Частые ситуации наших клиентов</h2>
       
@@ -1050,25 +1050,25 @@
         <div class="case-card">
           <h4>Строители не сдают объект вовремя</h4>
           <p>Поможем взыскать неустойку с застройщика и защитить права дольщика в суде</p>
-          <a href="#construction" class="btn btn--ghost">Получить консультацию</a>
+          <a href="#contact" class="btn btn--ghost">Получить консультацию</a>
         </div>
         
         <div class="case-card">
           <h4>Конфликт с шумными соседями</h4>
           <p>Юридическое решение споров с соседями по поводу нарушения тишины</p>
-          <a href="#neighbors" class="btn btn--ghost">Получить консультацию</a>
+          <a href="#contact" class="btn btn--ghost">Получить консультацию</a>
         </div>
         
         <div class="case-card">
           <h4>Стали жертвой мошенников</h4>
           <p>Поможем вернуть деньги и привлечь мошенников к ответственности</p>
-          <a href="#fraud" class="btn btn--ghost">Получить консультацию</a>
+          <a href="#contact" class="btn btn--ghost">Получить консультацию</a>
         </div>
         
         <div class="case-card">
           <h4>Проблемы ребёнка в школе</h4>
           <p>Защита прав детей и родителей в образовательных учреждениях</p>
-          <a href="#school" class="btn btn--ghost">Получить консультацию</a>
+          <a href="#contact" class="btn btn--ghost">Получить консультацию</a>
         </div>
       </div>
     </div>
@@ -1093,7 +1093,7 @@
             <li>Приоритетная поддержка</li>
           </ul>
           
-          <a href="#individual-plan" class="btn btn--primary-cta">Выбрать план</a>
+          <a href="#contact" class="btn btn--primary-cta">Выбрать план</a>
         </div>
         
         <div class="pricing-card">
@@ -1110,7 +1110,7 @@
             <li>Круглосуточная поддержка</li>
           </ul>
           
-          <a href="#business-plan" class="btn btn--primary-cta">Выбрать план</a>
+          <a href="#contact" class="btn btn--primary-cta">Выбрать план</a>
         </div>
       </div>
     </div>
@@ -1142,7 +1142,7 @@
           </div>
           
           <div class="footer-actions">
-            <a href="#callback" class="btn btn--primary-cta">Заказать звонок</a>
+            <a href="tel:+79675558182" class="btn btn--primary-cta">Заказать звонок</a>
             <a href="tel:+79675558182" class="btn btn--primary">Позвонить</a>
             <a href="mailto:zgt-mail@yandex.ru" class="btn btn--ghost">Написать письмо</a>
           </div>
@@ -1154,18 +1154,18 @@
             <ul>
               <li><a href="#individual">Для физических лиц</a></li>
               <li><a href="#business">Для юридических лиц</a></li>
-              <li><a href="#consultation">Консультации</a></li>
-              <li><a href="#representation">Представительство</a></li>
+              <li><a href="#contact">Консультации</a></li>
+              <li><a href="#contact">Представительство</a></li>
             </ul>
           </div>
           
           <div class="footer-column">
             <h4>Информация</h4>
             <ul>
-              <li><a href="#portfolio">Портфолио</a></li>
-              <li><a href="#about">О нас</a></li>
+              <li><a href="#experience">Портфолио</a></li>
+              <li><a href="#contact">О нас</a></li>
               <li><a href="#experience">Наш опыт</a></li>
-              <li><a href="#knowledge">База знаний</a></li>
+              <li><a href="#experience">База знаний</a></li>
             </ul>
           </div>
           
@@ -1174,8 +1174,8 @@
             <ul>
               <li><a href="#pricing">Цены</a></li>
               <li><a href="#contact">Контакты</a></li>
-              <li><a href="#callback">Обратный звонок</a></li>
-              <li><a href="#chat">Онлайн-чат</a></li>
+              <li><a href="tel:+79675558182">Обратный звонок</a></li>
+              <li><a href="mailto:zgt-mail@yandex.ru">Онлайн-чат</a></li>
             </ul>
           </div>
         </div>
@@ -1269,7 +1269,7 @@
       }, 3000);
     }
 
-    // Add intersection observer for animations
+    // Add intersection observer for animations with proper cleanup
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -1279,6 +1279,8 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.animationPlayState = 'running';
+          // Unobserve after animation starts to prevent memory leaks
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
@@ -1289,11 +1291,12 @@
       observer.observe(el);
     });
 
-    // Header scroll effect
+    // Header scroll effect with throttling to prevent performance issues
     let lastScrollTop = 0;
+    let ticking = false;
     const header = document.querySelector('.header');
     
-    window.addEventListener('scroll', () => {
+    function updateHeader() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       
       if (scrollTop > lastScrollTop && scrollTop > 100) {
@@ -1305,7 +1308,17 @@
       }
       
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
 
     // Add loading animation
     window.addEventListener('load', () => {
