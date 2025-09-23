@@ -58,7 +58,7 @@ tmp/
 temp/
 
 # Build outputs
-dist/
+# dist/ - commented out to allow committing built CSS
 build/
 
 # Cache directories

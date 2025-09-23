@@ -1,0 +1,57 @@
+/* Placeholder - run "npm install" then "npm run build" to generate the actual Tailwind CSS */
+/* This will be replaced when you run the build command with Node.js available */
+
+/* Design Tokens */
+:root {
+  /* Colors - Base */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  
+  /* Colors - Text */
+  --color-text-primary: var(--color-black);
+  --color-text-invert: var(--color-white);
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+  
+  /* Colors - Surface */
+  --color-surface-page: var(--color-white);
+  --color-surface-card: var(--color-white);
+  --color-surface-panel: #F9FAFB;
+  
+  /* Colors - Border */
+  --color-border-base: #E5E7EB;
+  --color-border-focus: #3B82F6;
+  
+  /* Colors - Accent */
+  --color-accent: #D97706;
+  --color-accent-hover: #B45309;
+  --color-accent-light: #FEF3C7;
+  
+  /* Radius */
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-pill: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-focus: 0 0 0 3px rgb(59 130 246 / 0.5);
+  
+  /* Typography */
+  --font-family-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+}
+
+/* Minimal Tailwind utilities for immediate use */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
