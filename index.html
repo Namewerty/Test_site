@@ -12,36 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Design System CSS -->
-  <link rel="stylesheet" href="src/styles/tokens.css">
   <link rel="stylesheet" href="src/styles/globals.css">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: 'var(--color-accent)' },
-            surface: {
-              page: 'var(--color-surface-page)',
-              card: 'var(--color-surface-card)'
-            },
-            text: {
-              primary: 'var(--color-text-primary)',
-              invert: 'var(--color-text-invert)'
-            },
-            border: { base: 'var(--color-border-base)' }
-          },
-          borderRadius: { card: 'var(--radius-card)' },
-          boxShadow: {
-            sm: 'var(--shadow-sm)',
-            md: 'var(--shadow-md)'
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Built Tailwind CSS -->
+  <link rel="stylesheet" href="dist/tailwind.css">
   
   <style>
     :root {
