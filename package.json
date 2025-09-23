@@ -4,9 +4,10 @@
   "description": "Сайт юридической фирмы ЗГТ Право - профессиональные юридические услуги для физических и юридических лиц",
   "main": "public/index.html",
   "scripts": {
-    "dev": "live-server public --port=3000",
+    "dev": "live-server --port=3000 --open=index.html",
+    "build:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --minify",
+    "watch:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --watch",
     "start": "live-server public --port=8080",
-    "build": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --minify",
     "lint": "echo 'Проверка кода'",
     "test": "echo 'Тесты не настроены'"
   },
