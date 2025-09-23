@@ -47,17 +47,36 @@ The `tailwind.config.js` maps Tailwind utilities to your existing CSS custom pro
 - `rounded-card` → `var(--radius-card)`
 - `shadow-sm/md` → `var(--shadow-*)`
 
+## Git and Deployment
+
+- ✅ `dist/tailwind.css` is now tracked by git (removed from .gitignore)
+- ✅ All configuration files committed to repository
+- ✅ Ready for deployment without additional build steps
+
+## Development Workflow
+
+1. **First time setup:**
+   ```bash
+   npm install
+   npm run build:css  # Build initial CSS
+   ```
+
+2. **Daily development:**
+   ```bash
+   npm run watch:css  # Auto-rebuild CSS on changes (Terminal 1)
+   npm run dev        # Start dev server (Terminal 2)
+   ```
+
+3. **Before committing:**
+   ```bash
+   npm run build:css  # Build production CSS
+   git add .
+   git commit -m "Your changes"
+   ```
+
 ## Current Status
 
-- ✅ Configuration files created
-- ✅ Package.json updated with dependencies and build script
-- ✅ index.html updated to use built CSS
-- ⚠️ Placeholder CSS in `dist/tailwind.css` (run build to replace)
-- ✅ Existing inline styles preserved
-
-## Next Steps
-
-1. Install Node.js if not available
-2. Run `npm install` to install dependencies
-3. Run `npm run build` to generate the actual Tailwind CSS
-4. Start using Tailwind utilities in your HTML!
+- ✅ All files tracked by git (no more commit issues)
+- ✅ Build system ready for development
+- ✅ Production-ready deployment
+- ✅ Existing styles preserved
