@@ -1,0 +1,34 @@
+{
+  "name": "zgt-pravo-website",
+  "version": "1.0.0",
+  "description": "Сайт юридической фирмы ЗГТ Право - профессиональные юридические услуги для физических и юридических лиц",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "live-server public --port=3000",
+    "start": "live-server public --port=8080",
+    "build": "echo 'Build process - копирование файлов для продакшена'",
+    "lint": "echo 'Проверка кода'",
+    "test": "echo 'Тесты не настроены'"
+  },
+  "keywords": [
+    "юридические услуги",
+    "право",
+    "консультации",
+    "адвокат",
+    "юрист",
+    "legal services"
+  ],
+  "author": "ЗГТ Право",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/zgt-pravo-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/zgt-pravo-website/issues"
+  },
+  "homepage": "https://github.com/your-username/zgt-pravo-website#readme"
+}
