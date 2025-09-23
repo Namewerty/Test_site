@@ -1,0 +1,23 @@
+# Cursor Rules
+
+## Design System
+- Always use CSS custom properties from `src/styles/tokens.css`
+- Never use raw hex colors - use design tokens instead
+- Use semantic color names (e.g., `--color-text-primary` not `--color-blue-500`)
+
+## Accessibility
+- All interactive elements must have AA-compliant focus rings
+- Use `var(--shadow-focus)` for focus styles
+- Maintain color contrast ratios of 4.5:1 minimum
+
+## Code Style
+- Use consistent naming: kebab-case for CSS, camelCase for JS
+- Prefer CSS custom properties over hardcoded values
+- Keep components modular and reusable
+
+## File Organization
+- Design tokens in `design/tokens.json`
+- CSS variables in `src/styles/tokens.css`
+- Global styles in `src/styles/globals.css`
+- Component scripts in `src/js/`
+- Media assets in `public/media/` and `public/logos/`
