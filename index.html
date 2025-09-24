@@ -11,28 +11,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Design System CSS -->
-  <link rel="stylesheet" href="src/styles/globals.css">
-  
-  <!-- Built Tailwind CSS -->
-  <link rel="stylesheet" href="dist/tailwind.css">
+  <!-- Complete CSS with all styles -->
+  <link rel="stylesheet" href="src/styles/complete.css">
 </head>
 
-<body class="antialiased">
+<body>
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border-base)] z-[var(--z-header)]">
-    <div class="max-w-[var(--container-max)] mx-auto px-6 py-4">
+  <header class="header">
+    <div class="container">
       <div class="flex items-center justify-between">
-        <div class="font-medium text-[var(--color-text-primary)] font-[family-name:var(--font-heading)]">Ольга Фатеева</div>
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#expertise" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Lorem</a>
-          <a href="#formats" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Ipsum</a>
-          <a href="#cases" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Dolor</a>
-          <a href="#method" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Sit</a>
-          <button class="btn-primary gold-animated min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]">Записаться на разбор</button>
+        <div style="font-weight: 500; color: var(--color-text-primary); font-family: var(--font-heading);">Ольга Фатеева</div>
+        <nav class="header-nav">
+          <a href="#expertise">Lorem</a>
+          <a href="#formats">Ipsum</a>
+          <a href="#cases">Dolor</a>
+          <a href="#method">Sit</a>
+          <button class="btn btn-primary gold-animated">Записаться на разбор</button>
         </nav>
-        <button class="md:hidden p-2 w-11 h-11" aria-label="Меню">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button style="display: none; padding: 0.5rem; width: 2.75rem; height: 2.75rem; background: none; border: none; cursor: pointer;" aria-label="Меню">
+          <svg style="width: 1.5rem; height: 1.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
@@ -44,98 +41,110 @@
   <main class="page-snap">
     
     <!-- 1. HERO Section -->
-    <section class="hero-section relative flex items-center justify-center min-h-screen" id="hero">
-      <!-- Background Video -->
-      <video 
-        class="absolute inset-0 w-full h-full object-cover"
-        muted
-        loop
-        playsinline
-        autoplay
-        poster=""
-        aria-hidden="true"
-      >
-        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      
-      <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-[image:var(--gradient-hero-overlay)]"></div>
-      
-      <!-- Content -->
-      <div class="relative z-10 max-w-[var(--container-max)] mx-auto px-6 text-center text-white" data-animate="fade-up">
-        <h1 class="text-[clamp(var(--fs-5xl),5vw,var(--fs-7xl))] font-[var(--fw-bold)] font-[family-name:var(--font-heading)] leading-[var(--lh-headline)] tracking-[var(--tracking-heading)] mb-6">
-          Lorem Ipsum Dolor<br>
-          <span class="text-[var(--color-accent)]">Sit Amet Consectetur</span>
-        </h1>
-        <p class="text-[clamp(var(--fs-lg),2.5vw,var(--fs-2xl))] leading-[var(--lh-base)] max-w-3xl mx-auto mb-10 text-white/90">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button class="btn-primary gold-animated gold-sheen gold-glow min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)] px-8">
-            Lorem Ipsum Dolor
-          </button>
-          <button class="btn-secondary min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)] px-8">
-            Sit Amet Consectetur
-          </button>
+    <section class="hero hero--dark" id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <span class="hero-orb orb-1" aria-hidden="true"></span>
+        <span class="hero-orb orb-2" aria-hidden="true"></span>
+        <span class="hero-orb orb-3" aria-hidden="true"></span>
+      </div>
+
+      <div class="container hero-grid" data-animate="fade-up">
+        <!-- Text -->
+        <div class="hero-text">
+          <div class="hero-badge">Эксперт по масштабированию бизнеса</div>
+
+          <h1 id="hero-title" class="hero-title">
+            Масштабируйте бизнес системно<br>
+            <span class="text-accent">стратегия → команда → прибыль</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Чёткий план роста рентабельности на 30–100% и стабильный приток новых клиентов (+25% ежемесячно) за счёт управляемых инструментов продаж и продукта. 
+          </p>
+
+          <ul class="hero-proof">
+            <li>Экс-бизнес-лидер L'Oréal, Teva, Eli Lilly, Abbott, Herbalife Nutrition.</li>
+            <li>Опыт управления оборотом до 25 млрд ₽, 14 стран, 10 индустрий, 6 каналов продаж.</li>
+          </ul>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary gold-animated gold-sheen gold-glow" aria-label="Записаться на разбор">
+              Записаться на разбор
+            </a>
+            <button class="btn btn-secondary" data-action="scroll-video" aria-label="Смотреть видео">
+              Смотреть 1-мин видео
+            </button>
+          </div>
+
+          <p class="hero-note text-muted">Работаем с собственниками и командами: от 100 млн ₽ до 1+ млрд ₽ выручки.</p>
         </div>
+
+        <!-- Video -->
+        <figure class="hero-media">
+          <video
+            class="hero-video-card"
+            src="public/media/hero_section_video.mp4"
+            preload="metadata"
+            controls
+            playsinline
+          ></video>
+          <figcaption class="sr-only">Короткое приветственное видео Ольги Фатеевой о подходе к масштабированию</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- 2. PROOF STRIP Section -->
-    <section class="py-20 bg-white flex items-center justify-center min-h-screen" id="proof">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <div class="stat-card">
-            <div class="text-[var(--stat-number-size)] font-bold text-[var(--stat-number-fg)] leading-none mb-2">150+</div>
-            <div class="text-[var(--stat-label-size)] text-[var(--stat-label-fg)]">Lorem Ipsum Dolor</div>
-            <div class="w-16 h-1 bg-[var(--color-accent)] mx-auto mt-4 gold-animated"></div>
+    <section class="section bg-white" id="proof">
+      <div class="container" data-animate="fade-up">
+        <div class="stats">
+          <div>
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Lorem Ipsum Dolor</div>
+            <div class="stat-bar gold-animated"></div>
           </div>
-          <div class="stat-card">
-            <div class="text-[var(--stat-number-size)] font-bold text-[var(--stat-number-fg)] leading-none mb-2">3.2x</div>
-            <div class="text-[var(--stat-label-size)] text-[var(--stat-label-fg)]">Sit Amet Consectetur</div>
-            <div class="w-16 h-1 bg-[var(--color-accent)] mx-auto mt-4 gold-animated"></div>
+          <div>
+            <div class="stat-number">3.2x</div>
+            <div class="stat-label">Sit Amet Consectetur</div>
+            <div class="stat-bar gold-animated"></div>
           </div>
-          <div class="stat-card">
-            <div class="text-[var(--stat-number-size)] font-bold text-[var(--stat-number-fg)] leading-none mb-2">15</div>
-            <div class="text-[var(--stat-label-size)] text-[var(--stat-label-fg)]">Adipiscing Elit</div>
-            <div class="w-16 h-1 bg-[var(--color-accent)] mx-auto mt-4 gold-animated"></div>
+          <div>
+            <div class="stat-number">15</div>
+            <div class="stat-label">Adipiscing Elit</div>
+            <div class="stat-bar gold-animated"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 3. EXPERTISE Section -->
-    <section class="py-20 bg-gray-50 flex items-center justify-center min-h-screen" id="expertise">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-16">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
-            Lorem Ipsum Expertise
-          </h2>
-          <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam
-          </p>
-        </div>
+    <section class="section bg-gray-light" id="expertise">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">
+          Lorem Ipsum Expertise
+        </h2>
+        <p class="section-subtitle">
+          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam
+        </p>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-          <div class="flex items-center justify-center p-8 bg-white rounded-[var(--card-radius)] shadow-[var(--card-shadow)]">
-            <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
-              <span class="text-sm font-medium text-gray-500" alt="L'Oréal company logo">L'Oréal</span>
+        <div class="grid grid-4 gap-8" style="opacity: 0.6; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background: white; border-radius: var(--card-radius); box-shadow: var(--card-shadow);">
+            <div style="width: 4rem; height: 4rem; background: #e5e7eb; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.875rem; font-weight: 500; color: #6b7280;" alt="L'Oréal company logo">L'Oréal</span>
             </div>
           </div>
-          <div class="flex items-center justify-center p-8 bg-white rounded-[var(--card-radius)] shadow-[var(--card-shadow)]">
-            <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
-              <span class="text-sm font-medium text-gray-500" alt="Abbott company logo">Abbott</span>
+          <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background: white; border-radius: var(--card-radius); box-shadow: var(--card-shadow);">
+            <div style="width: 4rem; height: 4rem; background: #e5e7eb; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.875rem; font-weight: 500; color: #6b7280;" alt="Abbott company logo">Abbott</span>
             </div>
           </div>
-          <div class="flex items-center justify-center p-8 bg-white rounded-[var(--card-radius)] shadow-[var(--card-shadow)]">
-            <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
-              <span class="text-sm font-medium text-gray-500" alt="Herbalife company logo">Herbalife</span>
+          <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background: white; border-radius: var(--card-radius); box-shadow: var(--card-shadow);">
+            <div style="width: 4rem; height: 4rem; background: #e5e7eb; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.875rem; font-weight: 500; color: #6b7280;" alt="Herbalife company logo">Herbalife</span>
             </div>
           </div>
-          <div class="flex items-center justify-center p-8 bg-white rounded-[var(--card-radius)] shadow-[var(--card-shadow)]">
-            <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center">
-              <span class="text-sm font-medium text-gray-500" alt="Teva company logo">Teva</span>
+          <div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background: white; border-radius: var(--card-radius); box-shadow: var(--card-shadow);">
+            <div style="width: 4rem; height: 4rem; background: #e5e7eb; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.875rem; font-weight: 500; color: #6b7280;" alt="Teva company logo">Teva</span>
             </div>
           </div>
         </div>
@@ -143,156 +152,116 @@
     </section>
 
     <!-- 4. FORMATS Section -->
-    <section class="py-20 bg-white flex items-center justify-center min-h-screen" id="formats">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-16">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
-            Lorem Ipsum Formats
-          </h2>
-          <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Ut enim ad minim veniam quis nostrud exercitation ullamco laboris
-          </p>
-        </div>
+    <section class="section bg-white" id="formats">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">
+          Lorem Ipsum Formats
+        </h2>
+        <p class="section-subtitle">
+          Ut enim ad minim veniam quis nostrud exercitation ullamco laboris
+        </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="format-card bg-[var(--card-bg)] rounded-[var(--card-radius)] p-8 shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">Lorem Ipsum</h3>
-            <ul class="space-y-3 mb-6 text-[var(--color-text-muted)]">
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Dolor sit amet consectetur</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Adipiscing elit sed do eiusmod</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Tempor incididunt ut labore</span>
-              </li>
+        <div class="cards">
+          <div class="card">
+            <h3 class="card-title">Lorem Ipsum</h3>
+            <ul class="card-list">
+              <li>Dolor sit amet consectetur</li>
+              <li>Adipiscing elit sed do eiusmod</li>
+              <li>Tempor incididunt ut labore</li>
             </ul>
-            <div class="text-sm text-[var(--color-text-muted)] mb-6">Длительность: 1-3 месяца</div>
-            <button class="btn-primary w-full gold-sheen min-h-[var(--size-tap-min)]">Lorem Ipsum</button>
+            <div class="text-muted mb-6" style="font-size: var(--fs-sm);">Длительность: 1-3 месяца</div>
+            <button class="btn btn-primary gold-sheen" style="width: 100%;">Lorem Ipsum</button>
           </div>
 
-          <div class="format-card bg-[var(--card-bg)] rounded-[var(--card-radius)] p-8 shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">Dolor Sit Amet</h3>
-            <ul class="space-y-3 mb-6 text-[var(--color-text-muted)]">
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Et dolore magna aliqua</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Ut enim ad minim veniam</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Quis nostrud exercitation</span>
-              </li>
+          <div class="card">
+            <h3 class="card-title">Dolor Sit Amet</h3>
+            <ul class="card-list">
+              <li>Et dolore magna aliqua</li>
+              <li>Ut enim ad minim veniam</li>
+              <li>Quis nostrud exercitation</li>
             </ul>
-            <div class="text-sm text-[var(--color-text-muted)] mb-6">Длительность: 6-12 месяцев</div>
-            <button class="btn-primary w-full gold-sheen min-h-[var(--size-tap-min)]">Dolor Sit</button>
+            <div class="text-muted mb-6" style="font-size: var(--fs-sm);">Длительность: 6-12 месяцев</div>
+            <button class="btn btn-primary gold-sheen" style="width: 100%;">Dolor Sit</button>
           </div>
 
-          <div class="format-card bg-[var(--card-bg)] rounded-[var(--card-radius)] p-8 shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">Consectetur</h3>
-            <ul class="space-y-3 mb-6 text-[var(--color-text-muted)]">
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Ullamco laboris nisi ut</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Aliquip ex ea commodo</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Consequat duis aute irure</span>
-              </li>
+          <div class="card">
+            <h3 class="card-title">Consectetur</h3>
+            <ul class="card-list">
+              <li>Ullamco laboris nisi ut</li>
+              <li>Aliquip ex ea commodo</li>
+              <li>Consequat duis aute irure</li>
             </ul>
-            <div class="text-sm text-[var(--color-text-muted)] mb-6">Длительность: 3-6 месяцев</div>
-            <button class="btn-primary w-full gold-sheen min-h-[var(--size-tap-min)]">Consectetur</button>
+            <div class="text-muted mb-6" style="font-size: var(--fs-sm);">Длительность: 3-6 месяцев</div>
+            <button class="btn btn-primary gold-sheen" style="width: 100%;">Consectetur</button>
           </div>
 
-          <div class="format-card bg-[var(--card-bg)] rounded-[var(--card-radius)] p-8 shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">Adipiscing</h3>
-            <ul class="space-y-3 mb-6 text-[var(--color-text-muted)]">
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Dolor in reprehenderit in</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Voluptate velit esse cillum</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[var(--color-accent)] rounded-full mt-2 flex-shrink-0"></div>
-                <span>Dolore eu fugiat nulla</span>
-              </li>
+          <div class="card">
+            <h3 class="card-title">Adipiscing</h3>
+            <ul class="card-list">
+              <li>Dolor in reprehenderit in</li>
+              <li>Voluptate velit esse cillum</li>
+              <li>Dolore eu fugiat nulla</li>
             </ul>
-            <div class="text-sm text-[var(--color-text-muted)] mb-6">Длительность: 2-4 недели</div>
-            <button class="btn-primary w-full gold-sheen min-h-[var(--size-tap-min)]">Adipiscing</button>
+            <div class="text-muted mb-6" style="font-size: var(--fs-sm);">Длительность: 2-4 недели</div>
+            <button class="btn btn-primary gold-sheen" style="width: 100%;">Adipiscing</button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 5. CASES Section -->
-    <section class="py-20 bg-gray-50 flex items-center justify-center min-h-screen" id="cases">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-16">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
-            Lorem Ipsum Cases
-          </h2>
-          <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Pariatur excepteur sint occaecat cupidatat non proident
-          </p>
-        </div>
+    <section class="section bg-gray-light" id="cases">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">
+          Lorem Ipsum Cases
+        </h2>
+        <p class="section-subtitle">
+          Pariatur excepteur sint occaecat cupidatat non proident
+        </p>
         
         <!-- Filters -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-          <button class="chip active min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-pressed="true" data-filter="all">Все кейсы</button>
-          <button class="chip min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-pressed="false" data-filter="b2b">B2B</button>
-          <button class="chip min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-pressed="false" data-filter="b2c">B2C</button>
-          <button class="chip min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-pressed="false" data-filter="manufacturing">Производство</button>
-          <button class="chip min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-pressed="false" data-filter="services">Услуги</button>
+        <div class="chips">
+          <button class="chip active" aria-pressed="true" data-filter="all">Все кейсы</button>
+          <button class="chip" aria-pressed="false" data-filter="b2b">B2B</button>
+          <button class="chip" aria-pressed="false" data-filter="b2c">B2C</button>
+          <button class="chip" aria-pressed="false" data-filter="manufacturing">Производство</button>
+          <button class="chip" aria-pressed="false" data-filter="services">Услуги</button>
         </div>
         
         <!-- Cases Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="case-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]" data-category="b2b manufacturing">
-            <div class="h-48 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Lorem Ipsum Company</h3>
-              <div class="text-sm text-[var(--color-text-muted)] mb-4">Sed do eiusmod tempor incididunt ut labore</div>
-              <div class="flex gap-4 text-sm">
-                <span class="text-[var(--color-accent)] font-medium">+180% lorem</span>
-                <span class="text-[var(--color-accent)] font-medium">-40% ipsum</span>
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div class="card" style="padding: 0; overflow: hidden;" data-category="b2b manufacturing">
+            <div style="height: 12rem; background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);"></div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-size: var(--fs-xl); font-weight: var(--fw-bold); margin-bottom: 0.75rem;">Lorem Ipsum Company</h3>
+              <div class="text-muted mb-4" style="font-size: var(--fs-sm);">Sed do eiusmod tempor incididunt ut labore</div>
+              <div class="flex gap-4" style="font-size: var(--fs-sm);">
+                <span class="text-accent" style="font-weight: var(--fw-medium);">+180% lorem</span>
+                <span class="text-accent" style="font-weight: var(--fw-medium);">-40% ipsum</span>
               </div>
             </div>
           </div>
 
-          <div class="case-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]" data-category="b2c services">
-            <div class="h-48 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Dolor Sit Solutions</h3>
-              <div class="text-sm text-[var(--color-text-muted)] mb-4">Et dolore magna aliqua ut enim</div>
-              <div class="flex gap-4 text-sm">
-                <span class="text-[var(--color-accent)] font-medium">+400% dolor</span>
-                <span class="text-[var(--color-accent)] font-medium">+120% sit</span>
+          <div class="card" style="padding: 0; overflow: hidden;" data-category="b2c services">
+            <div style="height: 12rem; background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);"></div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-size: var(--fs-xl); font-weight: var(--fw-bold); margin-bottom: 0.75rem;">Dolor Sit Solutions</h3>
+              <div class="text-muted mb-4" style="font-size: var(--fs-sm);">Et dolore magna aliqua ut enim</div>
+              <div class="flex gap-4" style="font-size: var(--fs-sm);">
+                <span class="text-accent" style="font-weight: var(--fw-medium);">+400% dolor</span>
+                <span class="text-accent" style="font-weight: var(--fw-medium);">+120% sit</span>
               </div>
             </div>
           </div>
 
-          <div class="case-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]" data-category="b2c manufacturing">
-            <div class="h-48 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-3">Consectetur Manufacturing</h3>
-              <div class="text-sm text-[var(--color-text-muted)] mb-4">Ad minim veniam quis nostrud</div>
-              <div class="flex gap-4 text-sm">
-                <span class="text-[var(--color-accent)] font-medium">+60% amet</span>
-                <span class="text-[var(--color-accent)] font-medium">+200% elit</span>
+          <div class="card" style="padding: 0; overflow: hidden;" data-category="b2c manufacturing">
+            <div style="height: 12rem; background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);"></div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-size: var(--fs-xl); font-weight: var(--fw-bold); margin-bottom: 0.75rem;">Consectetur Manufacturing</h3>
+              <div class="text-muted mb-4" style="font-size: var(--fs-sm);">Ad minim veniam quis nostrud</div>
+              <div class="flex gap-4" style="font-size: var(--fs-sm);">
+                <span class="text-accent" style="font-weight: var(--fw-medium);">+60% amet</span>
+                <span class="text-accent" style="font-weight: var(--fw-medium);">+200% elit</span>
               </div>
             </div>
           </div>
@@ -301,63 +270,61 @@
     </section>
 
     <!-- 6. METHOD Section -->
-    <section class="py-20 bg-white flex items-center justify-center min-h-screen" id="method">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-16">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
-            Lorem Ipsum Method
-          </h2>
-          <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-          </p>
-        </div>
+    <section class="section bg-white" id="method">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">
+          Lorem Ipsum Method
+        </h2>
+        <p class="section-subtitle">
+          Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </p>
         
-        <div class="space-y-8">
-          <div class="method-step flex flex-col md:flex-row items-start gap-6 p-8 bg-gray-50 rounded-[var(--card-radius)]">
-            <div class="flex-shrink-0 w-12 h-12 bg-[var(--color-accent)] text-[var(--btn-primary-fg)] rounded-full flex items-center justify-center font-bold">1</div>
-            <div>
-              <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3">Диагностика</h3>
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+        <div class="method-steps">
+          <div class="method-step">
+            <div class="method-number">1</div>
+            <div class="method-content">
+              <h3>Диагностика</h3>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.
               </p>
             </div>
           </div>
 
-          <div class="method-step flex flex-col md:flex-row items-start gap-6 p-8 bg-gray-50 rounded-[var(--card-radius)]">
-            <div class="flex-shrink-0 w-12 h-12 bg-[var(--color-accent)] text-[var(--btn-primary-fg)] rounded-full flex items-center justify-center font-bold">2</div>
-            <div>
-              <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3">Стратегия</h3>
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+          <div class="method-step">
+            <div class="method-number">2</div>
+            <div class="method-content">
+              <h3>Стратегия</h3>
+              <p>
                 Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
               </p>
             </div>
           </div>
 
-          <div class="method-step flex flex-col md:flex-row items-start gap-6 p-8 bg-gray-50 rounded-[var(--card-radius)]">
-            <div class="flex-shrink-0 w-12 h-12 bg-[var(--color-accent)] text-[var(--btn-primary-fg)] rounded-full flex items-center justify-center font-bold">3</div>
-            <div>
-              <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3">KPI</h3>
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+          <div class="method-step">
+            <div class="method-number">3</div>
+            <div class="method-content">
+              <h3>KPI</h3>
+              <p>
                 Eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
           </div>
 
-          <div class="method-step flex flex-col md:flex-row items-start gap-6 p-8 bg-gray-50 rounded-[var(--card-radius)]">
-            <div class="flex-shrink-0 w-12 h-12 bg-[var(--color-accent)] text-[var(--btn-primary-fg)] rounded-full flex items-center justify-center font-bold">4</div>
-            <div>
-              <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3">Команда/Роли</h3>
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+          <div class="method-step">
+            <div class="method-number">4</div>
+            <div class="method-content">
+              <h3>Команда/Роли</h3>
+              <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.
               </p>
             </div>
           </div>
 
-          <div class="method-step flex flex-col md:flex-row items-start gap-6 p-8 bg-gray-50 rounded-[var(--card-radius)]">
-            <div class="flex-shrink-0 w-12 h-12 bg-[var(--color-accent)] text-[var(--btn-primary-fg)] rounded-full flex items-center justify-center font-bold">5</div>
-            <div>
-              <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3">Ритм управления</h3>
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+          <div class="method-step">
+            <div class="method-number">5</div>
+            <div class="method-content">
+              <h3>Ритм управления</h3>
+              <p>
                 Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas.
               </p>
             </div>
@@ -367,75 +334,73 @@
     </section>
 
     <!-- 7. MEDIA Section -->
-    <section class="py-20 bg-gray-50 flex items-center justify-center min-h-screen" id="media">
-      <div class="max-w-[var(--container-max)] mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-16">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
-            Lorem Ipsum Media
-          </h2>
-          <p class="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
-            Sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores
-          </p>
-        </div>
+    <section class="section bg-gray-light" id="media">
+      <div class="container" data-animate="fade-up">
+        <h2 class="section-title">
+          Lorem Ipsum Media
+        </h2>
+        <p class="section-subtitle">
+          Sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores
+        </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div class="media-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <div class="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-              <div class="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-[var(--btn-primary-fg)]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div class="media-card">
+            <div class="media-thumb">
+              <div class="media-icon">
+                <svg style="width: 1.5rem; height: 1.5rem;" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M8 5v10l7-5-7-5z"/>
                 </svg>
               </div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-2">Lorem Ipsum Systems</h3>
-              <p class="text-sm text-[var(--color-text-muted)]">Eos qui ratione voluptatem sequi nesciunt neque porro</p>
+            <div class="media-content">
+              <h3 class="media-title">Lorem Ipsum Systems</h3>
+              <p class="media-desc">Eos qui ratione voluptatem sequi nesciunt neque porro</p>
             </div>
           </div>
 
-          <div class="media-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <div class="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-              <div class="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-[var(--btn-primary-fg)]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <div class="media-card">
+            <div class="media-thumb">
+              <div class="media-icon">
+                <svg style="width: 1.5rem; height: 1.5rem;" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M8 5v10l7-5-7-5z"/>
                 </svg>
               </div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-2">Dolor Sit Management</h3>
-              <p class="text-sm text-[var(--color-text-muted)]">Quisquam est qui dolorem ipsum quia dolor sit amet</p>
+            <div class="media-content">
+              <h3 class="media-title">Dolor Sit Management</h3>
+              <p class="media-desc">Quisquam est qui dolorem ipsum quia dolor sit amet</p>
             </div>
           </div>
 
-          <div class="media-card bg-white rounded-[var(--card-radius)] overflow-hidden shadow-[var(--card-shadow)] border border-[var(--card-border)]">
-            <div class="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-              <div class="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-[var(--btn-primary-fg)]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <div class="media-card">
+            <div class="media-thumb">
+              <div class="media-icon">
+                <svg style="width: 1.5rem; height: 1.5rem;" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M8 5v10l7-5-7-5z"/>
                 </svg>
               </div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] mb-2">Consectetur Growth</h3>
-              <p class="text-sm text-[var(--color-text-muted)]">Adipisci velit sed quia non numquam eius modi tempora</p>
+            <div class="media-content">
+              <h3 class="media-title">Consectetur Growth</h3>
+              <p class="media-desc">Adipisci velit sed quia non numquam eius modi tempora</p>
             </div>
           </div>
         </div>
 
         <!-- Media Navigation -->
-        <div class="flex justify-center gap-4">
-          <button class="w-11 h-11 bg-white border border-[var(--color-border-base)] rounded-full flex items-center justify-center hover:bg-gray-50 min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-label="Предыдущий">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <div class="nav-controls">
+          <button class="nav-btn" aria-label="Предыдущий">
+            <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
-          <div class="flex gap-2 items-center">
-            <button class="w-3 h-3 bg-[var(--color-accent)] rounded-full gold-glow min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-label="Слайд 1"></button>
-            <button class="w-3 h-3 bg-gray-300 rounded-full min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-label="Слайд 2"></button>
-            <button class="w-3 h-3 bg-gray-300 rounded-full min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-label="Слайд 3"></button>
+          <div class="nav-dots">
+            <button class="nav-dot active gold-glow" aria-label="Слайд 1"></button>
+            <button class="nav-dot" aria-label="Слайд 2"></button>
+            <button class="nav-dot" aria-label="Слайд 3"></button>
           </div>
-          <button class="w-11 h-11 bg-white border border-[var(--color-border-base)] rounded-full flex items-center justify-center hover:bg-gray-50 min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]" aria-label="Следующий">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <button class="nav-btn" aria-label="Следующий">
+            <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </button>
@@ -444,31 +409,31 @@
     </section>
 
     <!-- 8. FINAL CTA Section -->
-    <section class="py-20 bg-white flex items-center justify-center min-h-screen" id="contact">
-      <div class="max-w-3xl mx-auto px-6" data-animate="fade-up">
-        <div class="text-center mb-12">
-          <h2 class="text-[clamp(var(--fs-4xl),4vw,var(--fs-5xl))] font-bold font-[family-name:var(--font-heading)] text-[var(--color-text-primary)] mb-4">
+    <section class="section bg-white" id="contact">
+      <div class="container" style="max-width: 48rem;" data-animate="fade-up">
+        <div class="text-center mb-4">
+          <h2 class="section-title">
             Lorem Ipsum Ready?
           </h2>
-          <p class="text-lg text-[var(--color-text-muted)]">
+          <p class="section-subtitle" style="margin-bottom: 3rem;">
             Incidunt ut labore et dolore magnam aliquam quaerat voluptatem
           </p>
         </div>
         
-        <form class="space-y-6 bg-gray-50 p-8 rounded-[var(--card-radius)]">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-medium text-[var(--color-text-primary)] mb-2">Выручка</label>
-              <select class="w-full h-[var(--input-height)] px-4 border border-[var(--input-border)] rounded-[var(--input-radius)] bg-[var(--input-bg)] text-[var(--input-fg)]">
+        <form class="form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Выручка</label>
+              <select class="form-select">
                 <option>50-100 млн рублей</option>
                 <option>100-500 млн рублей</option>
                 <option>500 млн - 1 млрд рублей</option>
                 <option>Более 1 млрд рублей</option>
               </select>
             </div>
-            <div>
-              <label class="block text-sm font-medium text-[var(--color-text-primary)] mb-2">Команда</label>
-              <select class="w-full h-[var(--input-height)] px-4 border border-[var(--input-border)] rounded-[var(--input-radius)] bg-[var(--input-bg)] text-[var(--input-fg)]">
+            <div class="form-group">
+              <label class="form-label">Команда</label>
+              <select class="form-select">
                 <option>10-50 человек</option>
                 <option>50-200 человек</option>
                 <option>200-500 человек</option>
@@ -477,20 +442,20 @@
             </div>
           </div>
           
-          <div>
-            <label class="block text-sm font-medium text-[var(--color-text-primary)] mb-2">Цель роста</label>
+          <div class="form-group">
+            <label class="form-label">Цель роста</label>
             <textarea 
               rows="4" 
-              class="w-full px-4 py-3 border border-[var(--input-border)] rounded-[var(--input-radius)] bg-[var(--input-bg)] text-[var(--input-fg)] resize-none" 
+              class="form-textarea" 
               placeholder="Lorem ipsum dolor sit amet consectetur adipiscing elit..."
             ></textarea>
           </div>
           
           <div class="text-center">
-            <button type="submit" class="btn-primary gold-animated gold-glow px-12 min-w-[var(--size-tap-min)] min-h-[var(--size-tap-min)]">
+            <button type="submit" class="btn btn-primary gold-animated gold-glow" style="padding: 0 3rem;">
               Записаться на разбор
             </button>
-            <p class="text-xs text-[var(--color-text-muted)] mt-4">
+            <p class="text-muted mt-4" style="font-size: var(--fs-xs);">
               Lorem ipsum dolor sit amet consectetur adipiscing elit sed
             </p>
           </div>
@@ -501,16 +466,14 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-[var(--color-surface-contrast)] text-[var(--color-text-invert)] py-12">
-    <div class="max-w-[var(--container-max)] mx-auto px-6">
-      <div class="text-center">
-        <div class="text-2xl font-bold mb-4 font-[family-name:var(--font-heading)]">Ольга Фатеева</div>
-        <p class="text-gray-400 mb-6">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6 text-sm">
-          <a href="mailto:hello@olgafateeva.com" class="hover:text-[var(--color-accent)] transition-colors min-h-[var(--size-tap-min)] flex items-center justify-center">hello@olgafateeva.com</a>
-          <a href="tel:+7999999999" class="hover:text-[var(--color-accent)] transition-colors min-h-[var(--size-tap-min)] flex items-center justify-center">+7 999 999 99 99</a>
-          <a href="#" class="hover:text-[var(--color-accent)] transition-colors min-h-[var(--size-tap-min)] flex items-center justify-center">Политика конфиденциальности</a>
-        </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-title">Ольга Фатеева</div>
+      <p class="footer-subtitle">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+      <div class="footer-links">
+        <a href="mailto:hello@olgafateeva.com">hello@olgafateeva.com</a>
+        <a href="tel:+7999999999">+7 999 999 99 99</a>
+        <a href="#">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>
@@ -555,6 +518,11 @@
           }
         });
       });
+    });
+
+    // Scroll to video functionality
+    document.querySelector('[data-action="scroll-video"]')?.addEventListener('click', () => {
+      document.querySelector('.hero-media')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   </script>
 </body>
