@@ -1,48 +1,224 @@
-/* Design Tokens */
+/* Root variables generated from tokens.json (light mode by default) */
 :root {
-  /* Colors - Base */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  
-  /* Colors - Text */
-  --color-text-primary: var(--color-black);
-  --color-text-invert: var(--color-white);
-  --color-text-secondary: #6B7280;
-  --color-text-muted: #9CA3AF;
-  
-  /* Colors - Surface */
-  --color-surface-page: var(--color-white);
-  --color-surface-card: var(--color-white);
-  --color-surface-panel: #F9FAFB;
-  
-  /* Colors - Border */
-  --color-border-base: #E5E7EB;
-  --color-border-focus: #3B82F6;
-  
-  /* Colors - Accent */
-  --color-accent: #D97706; /* Gold accent */
-  --color-accent-hover: #B45309;
-  --color-accent-light: #FEF3C7;
-  
-  /* Radius */
-  --radius-card: 12px;
-  --radius-button: 8px;
-  --radius-pill: 9999px;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-focus: 0 0 0 3px rgb(59 130 246 / 0.5);
-  
+  /* Surfaces & text */
+  --color-surface-page: #FFFFFF;
+  --color-surface-contrast: #0B0D12;
+  --color-surface-card: #FFFFFF;
+
+  --color-text-primary: #0F172A;
+  --color-text-muted: #334155;
+  --color-text-invert: #FFFFFF;
+  --color-text-accent: #D4AF37; /* use on dark surfaces */
+
+  /* Brand accents (gold) */
+  --color-accent: #D4AF37;
+  --color-accent-hover: #C89B3C;
+  --color-accent-active: #B5882F;
+
+  /* Links */
+  --color-link: #0F172A;
+  --color-link-hover: #0B0D12;
+
+  /* Borders */
+  --color-border-base: rgba(15,23,42,0.12);
+  --color-border-strong: rgba(15,23,42,0.24);
+
+  /* Focus ring */
+  --focus-ring: #D4AF37;
+  --focus-ring-offset: #FFFFFF;
+
+  /* Hero overlay */
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(11,13,18,0) 0%, rgba(11,13,18,0.60) 40%, rgba(11,13,18,0.72) 100%);
+
   /* Typography */
-  --font-family-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-  
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
+  --font-heading: 'Manrope', ui-sans-serif, system-ui;
+  --font-body: 'Inter', ui-sans-serif, system-ui;
+
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 28px;
+  --fs-4xl: 32px;
+  --fs-5xl: 40px;
+  --fs-6xl: 48px;
+  --fs-7xl: 56px;
+
+  --lh-tight: 1.2;
+  --lh-headline: 1.1;
+  --lh-base: 1.55;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --tracking-dense: -0.005em;
+  --tracking-heading: -0.02em;
+
+  /* Spacing scale */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-1_5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Sizes & layout */
+  --container-max: 1200px;
+  --size-tap-min: 44px;
+  --size-control-lg: 48px;
+  --size-control-md: 44px;
+  --size-control-sm: 40px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.20);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.16);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.20);
+  --shadow-glow-gold: 0 0 0 3px rgba(212,175,55,0.28), 0 8px 24px rgba(212,175,55,0.25);
+
+  /* Motion */
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --dur-xshort: 120ms;
+  --dur-short: 160ms;
+  --dur-medium: 200ms;
+  --dur-long: 240ms;
+
+  /* Z-index */
+  --z-header: 50;
+  --z-overlay: 60;
+  --z-modal: 100;
+
+  /* Component tokens (selected) */
+  --btn-radius: var(--radius-md);
+  --btn-height: var(--size-control-md);
+  --btn-px: var(--space-4);
+  --btn-shadow: var(--shadow-sm);
+  --btn-primary-bg: var(--color-accent);
+  --btn-primary-fg: #0B0D12; /* critical: black text on gold for AA */
+  --btn-primary-bg-hover: var(--color-accent-hover);
+  --btn-primary-glow: var(--shadow-glow-gold);
+
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-fg: #0F172A;
+  --btn-secondary-border: var(--color-border-strong);
+
+  --card-bg: var(--color-surface-card);
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-md);
+  --card-border: var(--color-border-base);
+
+  --stat-number-size: var(--fs-6xl);
+  --stat-number-fg: var(--color-accent);
+  --stat-label-size: var(--fs-md);
+  --stat-label-fg: var(--color-text-muted);
+
+  --chip-height: var(--size-control-sm);
+  --chip-radius: var(--radius-pill);
+  --chip-px: var(--space-3);
+  --chip-bg: #F1F5F9;
+  --chip-fg: #0F172A;
+  --chip-bg-active: var(--color-accent);
+  --chip-fg-active: #0B0D12;
+  --chip-border: var(--color-border-base);
+
+  --tabs-track: var(--color-border-base);
+  --tabs-indicator: var(--color-accent);
+
+  --input-height: var(--size-control-md);
+  --input-radius: var(--radius-sm);
+  --input-border: var(--color-border-base);
+  --input-bg: #FFFFFF;
+  --input-fg: var(--color-text-primary);
+  --input-placeholder: var(--color-text-muted);
+  --input-ring-focus: var(--focus-ring);
+
+  /* Scroll-snap (block scrolling) */
+  --scroll-snap-type: y mandatory;
+  --scroll-snap-align: start;
+  --scroll-section-height: 100vh;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface-page: #0B0D12;
+    --color-surface-contrast: #FFFFFF;
+    --color-surface-card: #0F172A;
+
+    --color-text-primary: #FFFFFF;
+    --color-text-muted: #94A3B8;
+    --color-text-invert: #0B0D12;
+
+    --color-border-base: rgba(148,163,184,0.20);
+    --color-border-strong: rgba(148,163,184,0.32);
+
+    --gradient-hero-overlay: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.48) 40%, rgba(0,0,0,0.72) 100%);
+
+    --btn-secondary-bg: #0F172A;
+    --btn-secondary-fg: #FFFFFF;
+    --input-bg: #0F172A;
+  }
+}
+
+/* Helpful base styles (optional) */
+html, body {
+  background: var(--color-surface-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+  letter-spacing: var(--tracking-dense);
+}
+
+/* Headings */
+.h1, h1 { font-family: var(--font-heading); font-weight: var(--fw-bold); letter-spacing: var(--tracking-heading); line-height: var(--lh-headline); font-size: var(--fs-7xl); }
+.h2, h2 { font-family: var(--font-heading); font-weight: var(--fw-bold); letter-spacing: var(--tracking-heading); line-height: var(--lh-tight);    font-size: var(--fs-5xl); }
+.h3, h3 { font-family: var(--font-heading); font-weight: var(--fw-bold); letter-spacing: var(--tracking-heading); line-height: var(--lh-tight);    font-size: var(--fs-3xl); }
+
+/* Block scrolling primitives */
+.page-snap {
+  scroll-snap-type: var(--scroll-snap-type);
+  overflow-y: auto;
+  height: 100vh;
+}
+.page-snap > section {
+  height: var(--scroll-section-height);
+  scroll-snap-align: var(--scroll-snap-align);
+}
+
+/* Focus ring (AA-oriented) */
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Primary button hover glow */
+.btn-primary:hover {
+  box-shadow: var(--btn-primary-glow);
+  transition: box-shadow var(--dur-short) var(--easing-standard), background-color var(--dur-short) var(--easing-standard);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .page-snap { scroll-snap-type: none; }
 }
