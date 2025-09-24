@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "live-server --port=3000 --open=index.html",
     "build:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --minify",
-    "watch:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --watch",
-    "start": "live-server public --port=8080",
-    "lint": "echo 'Проверка кода'",
-    "test": "echo 'Тесты не настроены'"
+    "watch:css": "tailwindcss -i src/styles/tailwind.css -o dist/tailwind.css --watch"
   },
   "keywords": [
     "юридические услуги",
